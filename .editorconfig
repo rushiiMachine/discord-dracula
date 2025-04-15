@@ -17,5 +17,8 @@ ij_smart_tabs = false
 ij_visual_guides = none
 ij_wrap_on_typing = false
 
+[.run/**.run.xml]
+ij_formatter_enabled = false
+
 [pnpm-lock.yaml]
 ij_formatter_enabled = false

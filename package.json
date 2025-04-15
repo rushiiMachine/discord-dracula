@@ -1,14 +1,24 @@
 {
 	"name": "discord-dracula",
 	"description": "cute dracula theme for discord",
+	"type": "module",
 	"private": "true",
 	"scripts": {
-		"build": "sass --style=compressed ./src/main.scss ./dist/dist.css",
-		"dev": "node -e \"const {join} = require(`path`); console.log(`@import \\\"${join(process.cwd(), `/dist/dev.css`)}\\\";\\n`)\" && sass --style=expanded ./src/main.scss ./dist/dev.css",
+		"lint": "stylelint \"./src/**.scss\"",
+		"build": "pnpm lint && sass --style=compressed ./src/main.scss ./dist/dist.css",
+		"dev": "node scripts/dev.js",
 		"watch": "pnpm dev --watch"
 	},
 	"dependencies": {
 		"sass": "^1.86.3"
+	},
+	"devDependencies": {
+		"@types/node": "^22.14.1",
+		"chalk": "^5.4.1",
+		"chokidar": "^4.0.3",
+		"dotenv": "^16.5.0",
+		"stylelint": "^16.18.0",
+		"stylelint-config-standard-scss": "^14.0.0"
 	},
 	"engines": {
 		"node": ">=22",
