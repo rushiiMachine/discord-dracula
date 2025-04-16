@@ -40,9 +40,8 @@ if (!existsSync(themesDir)) {
 }
 
 function dateHeader() {
-	const date = new Date().toISOString()
-		.replace(/T/, ' ')
-		.replace(/\..+/, '');
+	const date = new Date().toLocaleString()
+		.replace(",", "");
 
 	return chalk.gray(`[${date}]`);
 }

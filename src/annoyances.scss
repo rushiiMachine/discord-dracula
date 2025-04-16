@@ -1,0 +1,85 @@
+/**
+ * Removal of various minor annoyances.
+ */
+
+/** DM Channels List */
+
+nav[class^="privateChannels_"] div[class^="searchBar_"] {
+	display: none;
+}
+
+div[data-list-id^="private-channels"] {
+	// Nitro/Shop buttons towards the top
+	li:has(a[data-list-item-id$="nitro"]),
+	li:has(a[data-list-item-id$="shop"]),
+	{
+		display: none;
+	}
+}
+
+
+/** Guilds List */
+
+// Remove discover servers item from guilds list
+ul[data-list-id="guildsnav"] div[class^="listItem_"]:has(foreignObject > div[data-list-item-id="guildsnav___guild-discover-button"]) {
+	display: none;
+}
+
+/** User Context Menu */
+
+// Remove "Invite to server"
+#user-context-invite-to-server {
+	display: none;
+}
+
+#user-profile-overflow-menu {
+	div > [class="separator_c1e9c4"] {
+		display: none;
+	}
+
+	#user-profile-overflow-menu-invite-to-server {
+		display: none;
+	}
+}
+
+// Remove "Add Note"
+#user-context-note {
+	display: none;
+}
+
+
+/** App Bar */
+
+// Remove help button
+div[data-windows="true"] a:has(div[role="button"][aria-label="Help"]) {
+	display: none;
+}
+
+
+/** Channel header */
+
+// Remove member list, notification settings buttons
+section[class^="title_"] div[class^="toolbar_"] {
+	div[role="button"][aria-label="Hide Member List"],
+	div[role="button"][aria-label="Notification Settings"],
+	{
+		display: none;
+	}
+}
+
+
+/** Chat */
+
+// No, I don't want to make a thread from a chain of more than 3 replies
+div[class*="threadSuggestionBar_"] {
+	display: none;
+}
+
+// Remove gift and apps buttons from chat bar
+div[class^="buttons_"] {
+	button[aria-label="Send a gift"],
+	div[class^="channelAppLauncher_"],
+	{
+		display: none;
+	}
+}

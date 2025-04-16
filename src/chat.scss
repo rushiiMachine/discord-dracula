@@ -1,0 +1,26 @@
+// Nicer unread messages bar
+div[class^="newMessagesBar"] {
+	margin-top: 0.5em;
+	height: 2em;
+	border-radius: 0.5em;
+	min-width: 70%;
+	justify-self: center;
+}
+
+// Nicer chat bar
+div[class^="channelTextArea_"] {
+	--custom-chat-input-margin-bottom: var(--space-12);
+
+	div[class^="buttons_"] {
+		gap: 0 !important;
+	}
+
+	div[class*="buttonContainer_"] {
+		padding: 0 2px;
+		opacity: 0.7;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}

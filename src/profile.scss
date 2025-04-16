@@ -1,0 +1,16 @@
+/**
+ * Theming for user profiles (compact and expanded).
+ */
+
+/** Current user bar */
+
+// No persistent red background glow on mute/deafen buttons
+div[class^="buttons_"] {
+	button[class*="redGlow_"] {
+		background-color: unset !important;
+	}
+
+	button:hover {
+		background-color: var(--background-modifier-selected) !important;
+	}
+}
