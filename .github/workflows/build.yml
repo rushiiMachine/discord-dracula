@@ -1,0 +1,78 @@
+name: Build
+
+on:
+  push:
+    branches-ignore: [ "builds" ]
+    paths-ignore: [ "**.md" ]
+  pull_request:
+    paths-ignore: [ "**.md" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+
+      - name: Setup PNPM
+        run: |
+          npm install --global corepack
+          corepack install
+
+      - name: Build Theme
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: discord-dracula
+          if-no-files-found: error
+          path: |
+            ${{ github.workspace }}/dist/main.css
+            ${{ github.workspace }}/dist/main.css.map
+
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    needs: [ build ]
+    if: github.ref_name == 'master'
+    permissions:
+      contents: write
+    concurrency:
+      group: "build"
+      cancel-in-progress: true
+    steps:
+      - name: Checkout builds
+        uses: actions/checkout@v4
+        with:
+          ref: builds
+          path: builds
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: artifacts
+
+      - name: Deploy theme
+        run: |
+          mv $GITHUB_WORKSPACE/artifacts/dist/* $GITHUB_WORKSPACE/builds
+
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          if [[ `git status --porcelain` ]]; then
+            git commit -m "Build $GITHUB_SHA"
+            git push
+          fi
