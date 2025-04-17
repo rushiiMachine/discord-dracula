@@ -8,9 +8,9 @@
 	// Not replacing default fonts with Whitney is intentional,
 	// I think gg sans is easier on the eyes.
 
-	--font-code: "Jetbrains Mono", "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono",
+	--font-code: "Jetbrains Mono", "Source Code Pro", consolas, "Andale Mono WT", "Andale Mono",
 	"Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
-	"Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+	"Liberation Mono", "Nimbus Mono L", monaco, "Courier New", courier, monospace;
 }
 
 [class*="text-sm/medium"] {

@@ -63,22 +63,6 @@ nav[class*="guilds_"] {
 		}
 	}
 
-	svg[class*="placeholderMask__"] {
-		width: var(--guildbar-avatar-size);
-		height: var(--guildbar-avatar-size);
-	}
-
-	svg:not([class*="placeholderMask__"]) {
-		top: 0;
-		left: 0;
-
-		foreignObject {
-			width: var(--guildbar-avatar-size);
-			height: var(--guildbar-avatar-size);
-			transform: translate(-4px, -4px);
-		}
-	}
-
 	mask {
 		--badge-offset: calc(var(--guildbar-avatar-size) - 40px);
 
@@ -111,6 +95,22 @@ nav[class*="guilds_"] {
 		}
 	}
 
+	svg[class*="placeholderMask__"] {
+		width: var(--guildbar-avatar-size);
+		height: var(--guildbar-avatar-size);
+	}
+
+	svg:not([class*="placeholderMask__"]) {
+		top: 0;
+		left: 0;
+
+		foreignObject {
+			width: var(--guildbar-avatar-size);
+			height: var(--guildbar-avatar-size);
+			transform: translate(-4px, -4px);
+		}
+	}
+
 	[class*="closedFolderIconWrapper__"] {
 		gap: initial;
 	}
@@ -125,7 +125,7 @@ nav[class*="guilds_"] {
 
 	div:not([class]):has([class*="listItem__"]) {
 		height: var(--guildbar-avatar-size) !important;
-		margin: 6px 0 6px 0;
+		margin: 6px 0;
 	}
 
 	[class*="isExpanded__"] {
@@ -137,7 +137,7 @@ nav[class*="guilds_"] {
 			border-radius: 24px;
 		}
 
-		[class*=expandedFolderIconWrapper__] {
+		[class*="expandedFolderIconWrapper__"] {
 			svg {
 				width: calc(var(--guildbar-folder-size) / 2);
 				height: calc(var(--guildbar-folder-size) / 2);
