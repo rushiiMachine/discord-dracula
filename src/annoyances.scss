@@ -9,6 +9,8 @@ nav[class^="privateChannels_"] div[class^="searchBar_"] {
 }
 
 div[data-list-id^="private-channels"] {
+	margin-top: var(--spacing-12);
+
 	// Nitro/Shop buttons towards the top
 	li:has(a[data-list-item-id$="nitro"]),
 	li:has(a[data-list-item-id$="shop"]),
@@ -49,8 +51,6 @@ ul[data-list-id="guildsnav"] div[class^="listItem_"]:has(foreignObject > div[dat
 
 
 /****** App Bar ******/
-
-// TODO: do this while restoring old app bar
 
 // Remove help button
 div[data-windows="true"] a:has(div[role="button"][aria-label="Help"]) {

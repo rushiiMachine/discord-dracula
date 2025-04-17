@@ -16,3 +16,16 @@
 [class*="text-sm/medium"] {
 	font-weight: 600;
 }
+
+/****** Theme variables ******/
+
+:root {
+	--radius-none: 0px;
+	--radius-xxs: 2px;
+	--radius-xs: 4px;
+	--radius-sm: var(--radius-xs); // Less rounding
+	--radius-md: 12px;
+	--radius-lg: 16px;
+	--radius-xl: 24px;
+	--radius-xxl: 32;
+}

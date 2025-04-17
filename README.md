@@ -25,7 +25,7 @@ If you like what you see, please consider [sponsoring me] on GitHub!
 
 This is based on an outdated theme by fawn: [`fawni/dracula`]!\
 Visual Refresh revert for guilds list from [`scattagain/VencordStuff`].\
-Other Visual Refresh reverts from [`milbits/oldcord`].
+Other Visual Refresh reverts from [`MaiRiosIPla/unshittify-discord`].
 
 [//]: # (@formatter:off)
 
@@ -33,7 +33,7 @@ Other Visual Refresh reverts from [`milbits/oldcord`].
 [sponsoring me]: https://github.com/sponsors/rushiiMachine
 [`fawni/dracula`]: https://github.com/fawni/dracula
 [`scattagain/VencordStuff`]: https://github.com/scattagain/VencordStuff
-[`milbits/oldcord`]: https://github.com/milbits/oldcord
+[`MaiRiosIPla/unshittify-discord`]: https://github.com/MaiRiosIPla/unshittify-discord
 
 [//]: # (@formatter:on)
 

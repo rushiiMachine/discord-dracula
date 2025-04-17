@@ -1,0 +1,47 @@
+/**
+ * Theming for the window app bar / top area.
+ */
+
+// Add padding to guilds list to account for title bar removal
+div[class^="sidebar_"] ul[data-list-id="guildsnav"] {
+	margin-top: 1rem;
+}
+
+// Remove spacing from old title bar
+div[class^="container_"] > div[class^="base_"] {
+	grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
+}
+
+// Move search bar/buttons left to make space for window buttons moved down
+div[class^="chat_"] section[class*="container_"] {
+	padding-right: 190px !important;
+	overflow: hidden !important;
+}
+
+// Move down window buttons & inbox
+div[data-windows="true"][class^="bar_"] {
+	gap: 2px;
+
+	/* margin-left: calc(var(--custom-guild-list-width) + var(--space-8)); */
+	width: max-content;
+
+	z-index: 1000 !important;
+	position: absolute;
+
+	background-color: var(--background-tertiary);
+	border-radius: var(--radius-xs);
+	top: 10px;
+	right: var(--space-xs);
+	left: unset;
+	padding: 0;
+	overflow: hidden;
+
+	> div[class^="trailing_"] {
+		gap: 0;
+	}
+
+	// Hide old title bar
+	> div[class^="title_"] {
+		display: none;
+	}
+}
