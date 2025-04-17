@@ -1,0 +1,19 @@
+/**
+ * Theming for all settings pages.
+ */
+
+// Less rounding
+button[class*="button_"] {
+	border-radius: var(--radius-xs);
+}
+
+// Remove outlined button look
+button[class*="lookOutlined_"][class*="colorRed_"] {
+	// Apply lookFilled_ class
+	background-color: var(--button-danger-background) !important;
+	color: var(--white) !important;
+
+	&:hover {
+		background-color: var(--button-danger-background-hover) !important;
+	}
+}

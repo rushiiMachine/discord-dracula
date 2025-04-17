@@ -1,0 +1,7 @@
+/**
+ * Theming for the members/users list on the right side.
+ */
+
+h3[class*="membersGroup_"] {
+	margin-bottom: var(--spacing-4);
+}

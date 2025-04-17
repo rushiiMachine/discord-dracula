@@ -9,7 +9,7 @@ div[class^="newMessagesBar"] {
 
 // Nicer chat bar
 div[class^="channelTextArea_"] {
-	--custom-chat-input-margin-bottom: var(--space-12);
+	--custom-chat-input-margin-bottom: 9px;
 
 	div[class^="buttons_"] {
 		gap: 0 !important;
@@ -23,4 +23,9 @@ div[class^="channelTextArea_"] {
 			opacity: 1;
 		}
 	}
+
+	div[class^="inner_"] {
+		--custom-channel-textarea-text-area-max-height: 55px;
+		--custom-channel-textarea-text-area-height: var(--custom-channel-textarea-text-area-max-height);
+}
 }

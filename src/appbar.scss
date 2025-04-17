@@ -2,6 +2,10 @@
  * Theming for the window app bar / top area.
  */
 
+div[class^="contentRegionScroller_"] {
+	--custom-app-top-bar-height: 50px;
+}
+
 // Add padding to guilds list to account for title bar removal
 div[class^="sidebar_"] ul[data-list-id="guildsnav"] {
 	margin-top: 1rem;
@@ -14,6 +18,7 @@ div[class^="container_"] > div[class^="base_"] {
 
 // Move search bar/buttons left to make space for window buttons moved down
 div[class^="chat_"] section[class*="container_"] {
+	border: none;
 	padding-right: 190px !important;
 	overflow: hidden !important;
 }

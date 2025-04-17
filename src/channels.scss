@@ -1,4 +1,17 @@
+/**
+ * Theming for the channel list & private channels (DMs) list.
+ */
+
+body {
+	--custom-guild-sidebar-width: 350px !important;
+}
+
 // Remove border around channels list
 div[class^="sidebarList_"] {
 	border: none !important;
+}
+
+// Less rounding on channel items
+li[class^="channel_"] {
+	border-radius: var(--radius-xs);
 }
