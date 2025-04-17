@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      sass:
-        specifier: ^1.86.3
-        version: 1.86.3
     devDependencies:
       '@types/node':
         specifier: ^22.14.1
@@ -24,6 +20,9 @@ importers:
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
+      sass:
+        specifier: ^1.86.3
+        version: 1.86.3
       stylelint:
         specifier: ^16.18.0
         version: 16.18.0

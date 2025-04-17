@@ -57,8 +57,18 @@ function compile() {
 			}
 		);
 
-		writeFileSync(devCssPath, result.css);
-		writeFileSync(remoteCssPath, result.css);
+		let header = `
+/**
+ * @name dracula
+ * @description cute dracula theme for discord~
+ * @author rushii
+ * @version 1.0.0
+ * @website https://github.com/rushiiMachine/discord-dracula
+ */
+`.trimStart();
+
+		writeFileSync(devCssPath, header + result.css);
+		writeFileSync(remoteCssPath, header + result.css);
 	} catch (e) {
 		console.log(dateHeader() + chalk.red(" Failed to compile theme"));
 		console.log(e.sassMessage ? e.message : e);

@@ -12,12 +12,7 @@ Add the following snippet to the top of your custom css:
 @import url("https://dracula.rushii.dev/main.css");
 ```
 
-This url is proxied through Cloudflare to reduce latency! If you don't like Cloudflare,
-you can use the direct GitHub Pages link:
-
-```css
-@import url("https://rushiiMachine.github.io/discord-dracula/main.css");
-```
+This url is proxied through Cloudflare to Github Pages to reduce latency!
 
 Alternatively, you can download the [`dracula.theme.css`] theme file to add to your
 client mod's `themes` folder! (right-click > *Save As*)

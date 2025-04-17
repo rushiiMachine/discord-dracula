@@ -6,5 +6,6 @@ export default {
 	rules: {
 		"scss/comment-no-empty": null,
 		"scss/double-slash-comment-whitespace-inside": null,
+		"at-rule-empty-line-before": null,
 	},
 };
