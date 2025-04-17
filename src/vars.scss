@@ -1,0 +1,18 @@
+/**
+ * Overriding global Discord variables.
+ */
+
+/****** Fonts ******/
+
+:root {
+	// Not replacing default fonts with Whitney is intentional,
+	// I think gg sans is easier on the eyes.
+
+	--font-code: "Jetbrains Mono", "Source Code Pro", Consolas, "Andale Mono WT", "Andale Mono",
+	"Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+	"Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+}
+
+[class*="text-sm/medium"] {
+	font-weight: 600;
+}

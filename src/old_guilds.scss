@@ -1,12 +1,11 @@
+// Reverts changes to guilds list by the Visual Refresh
 // Based on https://github.com/scattagain/VencordStuff/blob/main/css/GuildbarRevert.css
 
 :root {
-	--guildbar-avatar-size: 48px;
 	--blob-scale: 48;
-
+	--guildbar-avatar-size: 48px;
 	--guildbar-folder-size: var(--guildbar-avatar-size);
 	--folder-blob-scale: var(--blob-scale);
-
 	--custom-guild-list-padding: calc((72px - var(--guildbar-avatar-size)) / 2);
 }
 
@@ -83,7 +82,6 @@ nav[class*="guilds_"] {
 	mask {
 		--badge-offset: calc(var(--guildbar-avatar-size) - 40px);
 
-
 		use[href$="-lower_badge_masks"] {
 			translate: var(--badge-offset) var(--badge-offset);
 		}
@@ -127,7 +125,7 @@ nav[class*="guilds_"] {
 
 	div:not([class]):has([class*="listItem__"]) {
 		height: var(--guildbar-avatar-size) !important;
-		margin: 8px 0 8px;
+		margin: 6px 0 6px 0;
 	}
 
 	[class*="isExpanded__"] {

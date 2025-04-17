@@ -2,7 +2,7 @@
  * Removal of various minor annoyances.
  */
 
-/** DM Channels List */
+/****** DM Channels List ******/
 
 nav[class^="privateChannels_"] div[class^="searchBar_"] {
 	display: none;
@@ -18,14 +18,14 @@ div[data-list-id^="private-channels"] {
 }
 
 
-/** Guilds List */
+/****** Guilds List ******/
 
 // Remove discover servers item from guilds list
 ul[data-list-id="guildsnav"] div[class^="listItem_"]:has(foreignObject > div[data-list-item-id="guildsnav___guild-discover-button"]) {
 	display: none;
 }
 
-/** User Context Menu */
+/****** User Context Menus ******/
 
 // Remove "Invite to server"
 #user-context-invite-to-server {
@@ -48,7 +48,9 @@ ul[data-list-id="guildsnav"] div[class^="listItem_"]:has(foreignObject > div[dat
 }
 
 
-/** App Bar */
+/****** App Bar ******/
+
+// TODO: do this while restoring old app bar
 
 // Remove help button
 div[data-windows="true"] a:has(div[role="button"][aria-label="Help"]) {
@@ -56,7 +58,7 @@ div[data-windows="true"] a:has(div[role="button"][aria-label="Help"]) {
 }
 
 
-/** Channel header */
+/****** Channel Header ******/
 
 // Remove member list, notification settings buttons
 section[class^="title_"] div[class^="toolbar_"] {
@@ -68,7 +70,7 @@ section[class^="title_"] div[class^="toolbar_"] {
 }
 
 
-/** Chat */
+/****** Chat ******/
 
 // No, I don't want to make a thread from a chain of more than 3 replies
 div[class*="threadSuggestionBar_"] {
