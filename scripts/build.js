@@ -1,11 +1,12 @@
-import {writeFileSync} from "node:fs";
+import {mkdirSync, writeFileSync} from "node:fs";
 import {join} from "node:path";
 import chalk from "chalk";
 import * as sass from "sass";
 
 const srcPath = join(import.meta.dirname, "../src/main.scss");
-const outCssPath = join(import.meta.dirname, "../dist/main.css");
-const outMapPath = join(import.meta.dirname, "../dist/main.css.map");
+const distPath = join(import.meta.dirname, "../dist");
+const outCssPath = join(distPath, "main.css");
+const outMapPath = join(distPath, "main.css.map");
 
 function dateHeader() {
 	const date = new Date().toLocaleString()
@@ -36,7 +37,8 @@ try {
 	output += result.css;
 	output += "\n/*# sourceMappingURL=main.css.map */";
 
-	writeFileSync(outCssPath, output)
+	mkdirSync(distPath, {recursive: true});
+	writeFileSync(outCssPath, output);
 	writeFileSync(outMapPath, JSON.stringify(result.sourceMap));
 
 	console.log(dateHeader() + chalk.green(" Successfully compiled theme."));

@@ -62,12 +62,13 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: build
+          name: discord-dracula
           path: artifacts
 
       - name: Deploy theme
         run: |
-          mv $GITHUB_WORKSPACE/artifacts/dist/* $GITHUB_WORKSPACE/builds
+          mv $GITHUB_WORKSPACE/artifacts/* $GITHUB_WORKSPACE/builds
+          cd $GITHUB_WORKSPACE/builds
 
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"

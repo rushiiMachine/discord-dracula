@@ -1,4 +1,4 @@
-import {copyFileSync, existsSync, writeFileSync} from "node:fs";
+import {copyFileSync, existsSync, mkdirSync, writeFileSync} from "node:fs";
 import {join} from "node:path";
 import {watch} from "chokidar";
 import chalk from "chalk";
@@ -9,8 +9,9 @@ const dotenvResult = dotenv.config();
 const themesDir = dotenvResult.parsed?.THEMES_DIR;
 
 const srcDir = join(import.meta.dirname, "../src");
-const srcPath = join(import.meta.dirname, "../src/main.scss");
-const devCssPath = join(import.meta.dirname, "../dist/dev.css");
+const srcPath = join(srcDir, "main.scss");
+const distPath = join(import.meta.dirname, "../dist");
+const devCssPath = join(distPath, "dev.css");
 
 if (dotenvResult.error || !themesDir) {
 	const envPath = join(import.meta.dirname, "../.env");
@@ -67,6 +68,7 @@ function compile() {
  */
 `.trimStart();
 
+		mkdirSync(distPath, {recursive: true});
 		writeFileSync(devCssPath, header + result.css);
 		writeFileSync(remoteCssPath, header + result.css);
 	} catch (e) {
