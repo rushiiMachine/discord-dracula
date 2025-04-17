@@ -9,7 +9,7 @@ div[class^="sidebar_"] ul[data-list-id="guildsnav"] {
 
 // Remove spacing from old title bar
 div[class^="container_"] > div[class^="base_"] {
-	grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
+	grid-template-rows: [top] 0 [titlebarend] min-content [noticeend] 1fr [end];
 }
 
 // Move search bar/buttons left to make space for window buttons moved down
@@ -21,13 +21,9 @@ div[class^="chat_"] section[class*="container_"] {
 // Move down window buttons & inbox
 div[data-windows="true"][class^="bar_"] {
 	gap: 2px;
-
-	/* margin-left: calc(var(--custom-guild-list-width) + var(--space-8)); */
 	width: max-content;
-
 	z-index: 1000 !important;
 	position: absolute;
-
 	background-color: var(--background-tertiary);
 	border-radius: var(--radius-xs);
 	top: 10px;

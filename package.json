@@ -5,6 +5,7 @@
 	"private": "true",
 	"scripts": {
 		"lint": "stylelint \"./src/**.scss\"",
+		"lint:fix": "pnpm lint --fix",
 		"build": "pnpm lint && node ./scripts/build.js",
 		"dev": "node ./scripts/dev.js",
 		"watch": "pnpm dev --watch"
