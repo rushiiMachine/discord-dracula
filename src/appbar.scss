@@ -21,6 +21,7 @@ div[class^="chat_"] section[class*="container_"] {
 	border: none;
 	padding-right: 190px !important;
 	overflow: hidden !important;
+	background-color: var(--dracula-secondary);
 }
 
 // Move down window buttons & inbox

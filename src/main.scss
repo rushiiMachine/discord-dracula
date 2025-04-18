@@ -9,4 +9,11 @@
 @use "settings";
 @use "annoyances";
 
-@import "https://mairiosipla.github.io/unshittify-discord/UnShittifySource.theme.css";
+//// Censoring for theme showcase screenshots
+//ul[data-list-id="guildsnav"] img[class^="icon_"], // Guilds list
+//div[data-list-id^="private-channels"] div[class^="name_"], // DM names
+//span[class*="username_"], // Usernames
+//div[class^="nameTag_"] > div[class^="panelTitleContainer_"], // Current user username
+//{
+//	filter: blur(5px);
+//}

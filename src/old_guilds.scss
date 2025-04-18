@@ -128,23 +128,24 @@ nav[class*="guilds_"] {
 		margin: 6px 0;
 	}
 
+	[class*="expandedFolderIconWrapper__"] {
+		svg {
+			width: calc(var(--guildbar-folder-size) / 2);
+			height: calc(var(--guildbar-folder-size) / 2);
+		}
+
+		margin: 0;
+		transition: background-color var(--custom-folder-item-animation-duration) ease-out; /* 150ms */
+		background-color: var(--dracula-tertiary);
+	}
+
 	[class*="isExpanded__"] {
 		[class*="folder__"] {
-			background-color: var(--background-secondary);
+			background-color: var(--background-primary);
 		}
 
 		[class*="expandedFolderBackground__"] {
 			border-radius: 24px;
-		}
-
-		[class*="expandedFolderIconWrapper__"] {
-			svg {
-				width: calc(var(--guildbar-folder-size) / 2);
-				height: calc(var(--guildbar-folder-size) / 2);
-			}
-
-			margin: 0;
-			transition: background-color var(--custom-folder-item-animation-duration) ease-out; /* 150ms */
 		}
 
 		[class*="stack_"] {

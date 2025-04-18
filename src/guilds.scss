@@ -1,3 +1,26 @@
+/**
+ * Theming for the guilds list.
+ */
+
+// Better unread guilds indicator
+div[class^="unreadMentionsIndicatorTop_"] {
+	padding-top: 1rem;
+
+	& > div {
+		box-shadow: none !important;
+	}
+}
+
+// Accent color on Discord logo and guild folders
+div[data-list-item-id="guildsnav___home"] > div {
+	color: var(--dracula-accent);
+}
+
+div[data-list-item-id^="guildsnav__"] > div[class^="folderIconWrapper_"] svg {
+	color: var(--dracula-accent) !important;
+}
+
+// Vencord plugin fix
 #vc-friendcount {
 	margin-bottom: var(--spacing-8);
 }
