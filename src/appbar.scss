@@ -20,9 +20,22 @@ div[class^="container_"] > div[class^="base_"] {
 // Move search bar/buttons left to make space for window buttons moved down
 div[class^="chat_"] section[class*="container_"] {
 	border: none;
-	padding-right: 180px !important;
 	overflow: hidden !important;
 	background-color: var(--dracula-secondary);
+
+	// Spacing for the buttons that moved down as an overlay
+	// Just padding-right can't be used because otherwise disabling window dragging
+	// doesn't work. But the ::after pseudo-element does work.
+	div[class^="toolbar_"]::after {
+		content: "";
+		width: 160px;
+		height: 36px;
+		-webkit-app-region: no-drag;
+	}
+
+	div[class^="search_"] {
+		order: -1;
+	}
 }
 
 // Move down window buttons & inbox
@@ -50,10 +63,33 @@ div[data-windows="true"][class^="bar_"] {
 	}
 }
 
-// Remove fade from channel title
-section[class^="title_"] div[class^="children_"]::after {
-	display: none;
+// Make new top app bar draggable
+section[class^="title_"] {
+	-webkit-app-region: drag;
+
+	div[class^="topic_"] {
+		-webkit-app-region: no-drag !important;
+	}
 }
+
+// Better channel title/topic
+section[class^="title_"] div[class^="children_"] {
+	& > div[class^="titleWrapper_"] {
+		padding-right: 0;
+	}
+
+	& > svg[class^="dot_"] {
+		flex: 0 0 auto;
+		color: whitesmoke;
+		opacity: 30%;
+	}
+
+	&::after {
+		display: none;
+	}
+}
+
+// TODO: make title have ellipsis
 
 // Fix searchbar
 // TODO: align with chat?
