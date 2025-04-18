@@ -36,3 +36,47 @@ div[class^="modal_"] {
 	border-radius: 8px !important;
 	padding-bottom: 8px;
 }
+
+/****** Typing dots indicators ******/
+
+@keyframes typing-dots-cycle {
+	0% {
+		color: rgba(245 245 245 / 5%);
+	}
+	30% {
+		color: rgba(245 245 245 / 10%);
+	}
+	50% {
+		color: rgba(245 245 245 / 70%);
+	}
+	70% {
+		color: rgba(245 245 245 / 20%);
+	}
+	100% {
+		color: rgba(245 245 245 / 5%);
+	}
+}
+
+// Animate the typing dots
+svg[class*="dots_"] > g {
+	& > circle {
+		animation: typing-dots-cycle 4s ease infinite;
+	}
+
+	& > circle:nth-child(2) {
+		animation-delay: 200ms;
+	}
+
+	& > circle:nth-child(3) {
+		animation-delay: 400ms;
+	}
+}
+
+// Better spacing
+div[class^="typingDots_"] {
+	gap: var(--spacing-4);
+}
+
+.vc-typing-indicator-avatars {
+	margin-right: 4px;
+}
