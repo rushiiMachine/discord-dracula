@@ -2,6 +2,12 @@
  * Theming for the members/users list on the right side.
  */
 
+// Remove border
+div[class^="chat_"] > div[class^="content_"] > div[class^="container_"] {
+	border: none;
+}
+
+// Better spacing between groups
 h3[class*="membersGroup_"] {
 	margin-bottom: var(--spacing-4);
 }

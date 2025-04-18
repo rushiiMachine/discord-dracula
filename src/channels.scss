@@ -2,13 +2,30 @@
  * Theming for the channel list & private channels (DMs) list.
  */
 
-body {
-	--custom-guild-sidebar-width: 350px !important;
+// Better borders
+#channels {
+	border-radius: 0;
 }
 
-// Remove border around channels list
+// Fix borders
 div[class^="sidebarList_"] {
 	border: none !important;
+	border-radius: 0 !important;
+
+	header[class^="header_"],
+	div[class^="headerGlass_"],
+	{
+		border: none !important;
+	}
+}
+
+div[class^="sidebar_"]::after {
+	display: none;
+}
+
+// Fix banner padding
+div[class^="sidebarList_"] div[class^="scroller_"] div[style="height: 12px;"] {
+	display: none;
 }
 
 // Less rounding on channel items

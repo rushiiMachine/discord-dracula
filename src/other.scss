@@ -1,0 +1,30 @@
+/****** Inbox popout ******/
+
+// Remove border from messages
+div[class^="layerContainer_"] div[class^="messageContainer_"] {
+	border: none;
+}
+
+// Better padding for Friend Requests tab
+div[data-list-id="for-you"] {
+	margin-top: var(--spacing-16);
+	margin-bottom: var(--spacing-16);
+}
+
+div[class*="recentMentionsPopout_"] {
+	// Make it larger
+	min-height: 90vh;
+	max-height: 100vh !important;
+	min-width: 600px;
+
+	// Fix avatars/guild icons rounding
+	div[class*="guildIcon_"] {
+		border-radius: 100%;
+		background-color: transparent;
+	}
+
+	// Better header padding
+	div[class^="channelHeader_"] {
+		padding-left: 20px;
+	}
+}

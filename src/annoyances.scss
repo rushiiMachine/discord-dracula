@@ -20,6 +20,14 @@ div[data-list-id^="private-channels"] {
 }
 
 
+/****** Channels List ******/
+
+// Hide boosts level bar
+div[data-list-item-id^="channels___boosts"] {
+	display: none;
+}
+
+
 /****** Guilds List ******/
 
 // Remove discover servers item from guilds list
@@ -89,12 +97,12 @@ div[class^="buttons_"] {
 /****** Profile customization settings ******/
 
 #profile-customization-tab {
-	> div[class^="tabBar_"] {
+	& > div[class^="tabBar_"] {
 		margin-bottom: 25px;
 	}
 
 	// Hide nitro upselling
-	> div[class^="container_"],
+	& > div[class^="container_"],
 	div[class*="tryItOutSection_"],
 	div[class^="upsellOverlayContainer_"],
 	{

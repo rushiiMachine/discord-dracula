@@ -7,9 +7,20 @@ div[class^="newMessagesBar"] {
 	justify-self: center;
 }
 
+// Better padding between chat bar and bottom message
+div[class^="scrollerSpacer_"] {
+	height: var(--space-16) !important;
+}
+
 // Nicer chat bar
 div[class^="channelTextArea_"] {
 	--custom-chat-input-margin-bottom: 9px;
+
+	border: none;
+	border-radius: 50px;
+	margin-left: var(--spacing-16);
+	margin-right: var(--spacing-16);
+	margin-bottom: var(--spacing-16);
 
 	div[class^="buttons_"] {
 		gap: 0 !important;
@@ -24,8 +35,30 @@ div[class^="channelTextArea_"] {
 		}
 	}
 
+	// FIXME: scrollbar sized improperly and moves outside the textfield
+	div[class^="scrollableContainer_"] {
+		// Round the text field
+		border-radius: 50px;
+	}
+
+	// Move character count inwards to account for rounding
+	div[class^="characterCount_"] {
+		bottom: 24px;
+		right: 28px;
+	}
+
 	div[class^="inner_"] {
-		--custom-channel-textarea-text-area-max-height: 55px;
+		--custom-channel-textarea-text-area-max-height: 50px;
 		--custom-channel-textarea-text-area-height: var(--custom-channel-textarea-text-area-max-height);
+	}
+
+	// Remove nitro upsell
+	div[class*="upsell_"] {
+		display: none;
+	}
 }
+
+// Fix chat padding because of new chat input padding
+div[class^="messagesWrapper_"] {
+	margin-bottom: 4px;
 }

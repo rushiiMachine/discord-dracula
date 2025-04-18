@@ -14,3 +14,19 @@ div[class^="buttons_"] {
 		background-color: var(--background-modifier-selected) !important;
 	}
 }
+
+// Fit the bar to channels list like before Visual Refresh
+div[class^="sidebar_"] {
+	& > nav[class*="guilds_"] {
+		margin-bottom: 0;
+	}
+
+	& > section[class^="panels_"] {
+		right: var(--space-xs) !important;
+		left: auto;
+		bottom: 2px;
+		width: calc(100% - var(--space-xs) * 2 - var(--custom-guild-list-width));
+		padding-left: 4px;
+		border: none;
+	}
+}

@@ -2,12 +2,13 @@
  * Theming for the window app bar / top area.
  */
 
+// Make sure scrollbar doesn't overlap with window buttons
 div[class^="contentRegionScroller_"] {
 	--custom-app-top-bar-height: 50px;
 }
 
 // Add padding to guilds list to account for title bar removal
-div[class^="sidebar_"] ul[data-list-id="guildsnav"] {
+ul[data-list-id="guildsnav"] div[class*="scroller_"] div[class^="tutorialContainer_"] {
 	margin-top: 1rem;
 }
 
@@ -19,7 +20,7 @@ div[class^="container_"] > div[class^="base_"] {
 // Move search bar/buttons left to make space for window buttons moved down
 div[class^="chat_"] section[class*="container_"] {
 	border: none;
-	padding-right: 190px !important;
+	padding-right: 180px !important;
 	overflow: hidden !important;
 	background-color: var(--dracula-secondary);
 }
@@ -38,12 +39,42 @@ div[data-windows="true"][class^="bar_"] {
 	padding: 0;
 	overflow: hidden;
 
-	> div[class^="trailing_"] {
+	// Adjust sizing between buttons
+	& > div[class^="trailing_"] {
 		gap: 0;
 	}
 
 	// Hide old title bar
-	> div[class^="title_"] {
+	& > div[class^="title_"] {
 		display: none;
+	}
+}
+
+// Remove fade from channel title
+section[class^="title_"] div[class^="children_"]::after {
+	display: none;
+}
+
+// Fix searchbar
+// TODO: align with chat?
+div[class^="searchBar_"] {
+	border: none !important;
+	height: 36px !important;
+	align-items: center;
+	padding: 2px 4px !important;
+
+	.DraftEditor-root {
+		position: unset;
+		display: flex;
+		align-items: center;
+	}
+
+	.DraftEditor-editorContainer {
+		flex-grow: 1;
+	}
+
+	.public-DraftEditorPlaceholder-root {
+		padding: 0 !important;
+		margin-left: var(--spacing-4);
 	}
 }
