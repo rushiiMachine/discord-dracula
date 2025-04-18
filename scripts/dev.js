@@ -71,23 +71,27 @@ function compile() {
 		mkdirSync(distPath, {recursive: true});
 		writeFileSync(devCssPath, header + result.css);
 		writeFileSync(remoteCssPath, header + result.css);
+		return true;
 	} catch (e) {
 		console.log(dateHeader() + chalk.red(" Failed to compile theme"));
 		console.log(e.sassMessage ? e.message : e);
+		return false;
 	}
 }
 
 console.log(chalk.dim("Writing to theme directory " + chalk.gray(chalk.dim(themesDir))));
 console.log();
 
-compile();
-console.log(dateHeader() + chalk.green(" Successfully compiled theme."));
-
 if (process.argv.includes("--watch")) {
 	console.log(dateHeader() + chalk.green(" Watching for changes..."));
 
 	watch(srcDir).on("change", () => {
-		compile();
-		console.log(dateHeader() + chalk.green(" Successfully recompiled theme."));
+		if (compile()) {
+			console.log(dateHeader() + chalk.green(" Successfully recompiled theme."));
+		}
 	});
+}
+
+if (compile()) {
+	console.log(dateHeader() + chalk.green(" Successfully compiled theme."));
 }
