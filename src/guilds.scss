@@ -2,18 +2,35 @@
  * Theming for the guilds list.
  */
 
-// Better unread guilds indicator
-div[class^="unreadMentionsIndicatorTop_"] {
-	padding-top: 1rem;
+// Better "scroll" unread guilds list indicator
+ul[data-list-id="guildsnav"] {
+	& > div[class^="unreadMentionsIndicatorTop_"] > div {
+		box-shadow: 0 2px 12px var(--opacity-black-76);
+	}
 
-	& > div {
-		box-shadow: none !important;
+	& > div[class^="unreadMentionsIndicatorBottom_"] > div {
+		box-shadow: 0 -2px 12px var(--opacity-black-76);
+	}
+
+	div[class*="unreadMentionsBar_"] {
+		background-color: var(--dracula-accent);
 	}
 }
 
 // Accent color on Discord logo and guild folders
-div[data-list-item-id="guildsnav___home"] > div {
-	color: var(--dracula-accent);
+div[data-list-item-id="guildsnav___home"] {
+	& > div {
+		color: var(--dracula-accent-light);
+	}
+
+	&[class*="selected_"] > div {
+		color: white !important;
+	}
+}
+
+// Accent color on guild unread indicators
+ul[data-list-id="guildsnav"] div[class^="pill_"] > span {
+	background-color: var(--dracula-accent-light);
 }
 
 div[data-list-item-id^="guildsnav__"] > div[class^="folderIconWrapper_"] svg {

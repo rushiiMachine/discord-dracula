@@ -41,9 +41,10 @@ body {
 	--dracula-tertiary-alpha: rgb(32 34 44 / 60%);
 	--dracula-primary-light: #44475a;
 	--dracula-accent: #bd93f9;
-	--dracula-accent-alpha: rgb(189 147 249 / 20%);
-	--dracula-accent-alpha-alt: rgb(189 147 249 / 35%);
-	--dracula-accent-alpha-alt2: rgb(189 147 249 / 50%);
+	--dracula-accent-alpha-20: rgb(189 147 249 / 20%);
+	--dracula-accent-alpha-50: rgb(189 147 249 / 35%);
+	--dracula-accent-alpha-75: rgb(189 147 249 / 50%);
+	--dracula-accent-alpha-90: rgb(189 147 249 / 90%);
 	--dracula-accent-dark: #7b49c0;
 	--dracula-accent-light: #d4b5ff;
 
@@ -72,4 +73,9 @@ body {
 	--chat-background-default: var(--dracula-secondary);
 	--custom-channel-members-bg: var(--dracula-secondary);
 	--background-mod-subtle: var(--dracula-tertiary);
+	--modal-background: var(--dracula-tertiary);
+
+	// Brand
+	--bg-brand: var(--dracula-accent);
+	--brand-500: var(--dracula-accent);
 }

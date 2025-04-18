@@ -5,6 +5,8 @@ div[class^="newMessagesBar"] {
 	border-radius: 0.5em;
 	min-width: 70%;
 	justify-self: center;
+	background-color: var(--dracula-accent-alpha-90);
+	box-shadow: 0 4px 20px var(--opacity-black-56);
 }
 
 // Better padding between chat bar and bottom message
@@ -14,8 +16,6 @@ div[class^="scrollerSpacer_"] {
 
 // Nicer chat bar
 div[class^="channelTextArea_"] {
-	--custom-chat-input-margin-bottom: 9px;
-
 	border: none;
 	border-radius: 50px;
 	margin-left: var(--spacing-16);

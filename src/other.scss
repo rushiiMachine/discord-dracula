@@ -28,3 +28,11 @@ div[class*="recentMentionsPopout_"] {
 		padding-left: 20px;
 	}
 }
+
+/****** Channel topic popout ******/
+
+div[class^="modal_"] {
+	border: none !important;
+	border-radius: 8px !important;
+	padding-bottom: 8px;
+}

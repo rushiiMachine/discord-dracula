@@ -2,30 +2,34 @@
  * Theming for the channel list & private channels (DMs) list.
  */
 
-// Better borders
-#channels {
-	border-radius: 0;
-}
 
-// Fix borders
 div[class^="sidebarList_"] {
+	// Remove borders
 	border: none !important;
 	border-radius: 0 !important;
 
+	// Remove channel list header borders
 	header[class^="header_"],
 	div[class^="headerGlass_"],
 	{
 		border: none !important;
 	}
-}
 
-div[class^="sidebar_"]::after {
-	display: none;
-}
+	// Better "scroll" unread channels list indicator
+	div[class*="mentionsBar_"] {
+		background-color: var(--dracula-accent);
+		box-shadow: 0 4px 20px var(--opacity-black-56);
+	}
 
-// Fix banner padding
-div[class^="sidebarList_"] div[class^="scroller_"] div[style="height: 12px;"] {
-	display: none;
+	// Remove unnecessary padding at the bottom
+	&::after {
+		display: none;
+	}
+
+	// Fix banner padding
+	div[class^="scroller_"] div[style="height: 12px;"] {
+		display: none;
+	}
 }
 
 // Less rounding on channel items
