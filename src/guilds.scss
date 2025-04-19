@@ -2,6 +2,19 @@
  * Theming for the guilds list.
  */
 
+// Accent color on Discord logo and guild folders
+div[data-list-item-id="guildsnav___home"] {
+	& > div {
+		color: var(--dracula-accent-light);
+		background-color: var(--dracula-primary) !important;
+	}
+
+	&:hover > div, &[class*="selected_"] > div {
+		color: var(--dracula-accent-light) !important;
+		background-color: var(--dracula-primary-light) !important;
+	}
+}
+
 // Better "scroll" unread guilds list indicator
 ul[data-list-id="guildsnav"] {
 	& > div[class^="unreadMentionsIndicatorTop_"] > div {
@@ -14,17 +27,6 @@ ul[data-list-id="guildsnav"] {
 
 	div[class*="unreadMentionsBar_"] {
 		background-color: var(--dracula-accent);
-	}
-}
-
-// Accent color on Discord logo and guild folders
-div[data-list-item-id="guildsnav___home"] {
-	& > div {
-		color: var(--dracula-accent-light);
-	}
-
-	&[class*="selected_"] > div {
-		color: white !important;
 	}
 }
 

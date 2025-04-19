@@ -7,6 +7,11 @@ div[class^="newMessagesBar"] {
 	justify-self: center;
 	background-color: var(--dracula-accent-alpha-90);
 	box-shadow: 0 4px 20px var(--opacity-black-56);
+
+// Nicer "You are viewing older messages" bar
+div[class^="jumpToPresentBar_"] {
+	background-color: var(--dracula-tertiary) !important;
+	box-shadow: var(--shadow-high) !important;
 }
 
 // Better padding between chat bar and bottom message
@@ -61,4 +66,18 @@ div[class^="channelTextArea_"] {
 // Fix chat padding because of new chat input padding
 div[class^="messagesWrapper_"] {
 	margin-bottom: 4px;
+}
+
+// Better reactions container
+div[class*="reactionMe_"] {
+	border: 0.075rem solid transparent;
+}
+
+// Theme unread messages divider
+div[class^="divider_"] {
+	--divider-color: var(--dracula-accent);
+
+	& > span {
+		color: var(--white-530);
+	}
 }

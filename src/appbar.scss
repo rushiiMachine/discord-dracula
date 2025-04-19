@@ -81,7 +81,7 @@ section[class^="title_"] div[class^="children_"] {
 	& > svg[class^="dot_"] {
 		flex: 0 0 auto;
 		color: whitesmoke;
-		opacity: 30%;
+		opacity: 0.3;
 	}
 
 	&::after {

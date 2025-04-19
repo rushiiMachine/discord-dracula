@@ -43,15 +43,19 @@ div[class^="modal_"] {
 	0% {
 		color: rgba(245 245 245 / 5%);
 	}
+
 	30% {
 		color: rgba(245 245 245 / 10%);
 	}
+
 	50% {
 		color: rgba(245 245 245 / 70%);
 	}
+
 	70% {
 		color: rgba(245 245 245 / 20%);
 	}
+
 	100% {
 		color: rgba(245 245 245 / 5%);
 	}
@@ -79,4 +83,30 @@ div[class^="typingDots_"] {
 
 .vc-typing-indicator-avatars {
 	margin-right: 4px;
+}
+
+/****** Context Menus ******/
+
+div[class^="menu_"], div[class^="submenu_"] {
+	--header-primary: var(--white-560); // text color
+
+	background-color: var(--dracula-tertiary);
+	border-radius: 8px;
+	border: none;
+	box-shadow: var(--shadow-low);
+
+	& > div {
+		padding: 8px 10px;
+	}
+
+	// Fix emoji sizing
+	div[class^="customItem_"] > div {
+		border-radius: 100px !important;
+
+		img {
+			height: 22px;
+			width: 22px;
+			image-rendering: smooth;
+		}
+	}
 }
