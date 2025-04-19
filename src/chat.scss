@@ -1,3 +1,13 @@
+@keyframes unread-messages-bar-enter {
+	0% {
+		top: -3em;
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
 // Nicer unread messages bar
 div[class^="newMessagesBar"] {
 	margin-top: 0.5em;
@@ -7,6 +17,10 @@ div[class^="newMessagesBar"] {
 	justify-self: center;
 	background-color: var(--dracula-accent-alpha-90);
 	box-shadow: 0 4px 20px var(--opacity-black-56);
+	animation-name: unread-messages-bar-enter;
+	animation-duration: 150ms;
+	animation-fill-mode: backwards;
+}
 
 // Nicer "You are viewing older messages" bar
 div[class^="jumpToPresentBar_"] {
