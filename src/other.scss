@@ -37,6 +37,13 @@ div[class^="modal_"] {
 	padding-bottom: 8px;
 }
 
+/****** DM Channel user sidebar ******/
+
+// Mutual server icons
+div[class*="listAvatar_"] {
+	border-radius: 100%;
+}
+
 /****** Typing dots indicators ******/
 
 @keyframes typing-dots-cycle {

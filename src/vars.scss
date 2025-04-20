@@ -41,6 +41,9 @@ body, .theme-dark.theme-darker {
 	--dracula-tertiary-alpha: rgb(32 34 44 / 60%);
 	--dracula-primary-light: #44475a;
 	--dracula-accent: #bd93f9;
+	--dracula-accent-alpha-5: rgb(189 147 249 / 5%);
+	--dracula-accent-alpha-10: rgb(189 147 249 / 10%);
+	--dracula-accent-alpha-15: rgb(189 147 249 / 15%);
 	--dracula-accent-alpha-20: rgb(189 147 249 / 20%);
 	--dracula-accent-alpha-50: rgb(189 147 249 / 35%);
 	--dracula-accent-alpha-75: rgb(189 147 249 / 50%);
@@ -69,6 +72,7 @@ body, .theme-dark.theme-darker {
 	--background-base-low: var(--dracula-primary);
 	--background-base-lower: var(--dracula-primary);
 	--background-base-lowest: var(--dracula-secondary);
+	--background-surface-high: var(--dracula-secondary);
 	--background-surface-higher: var(--dracula-tertiary);
 	--background-surface-highest: var(--dracula-tertiary);
 	--chat-background-default: var(--dracula-secondary);
@@ -77,8 +81,22 @@ body, .theme-dark.theme-darker {
 	--bg-mod-subtle: var(--dracula-secondary);
 	--modal-background: var(--dracula-tertiary);
 	--message-reacted-background: var(--dracula-accent-alpha-20);
+	--background-code: var(--dracula-tertiary);
+	--background-mentioned: var(--dracula-accent-alpha-10);
+	--background-mentioned-hover: var(--dracula-accent-alpha-20);
+	--background-message-highlight: var(--dracula-accent-alpha-15);
+	--background-message-hover: var(--dracula-accent-alpha-5);
+	--autocomplete-bg: var(--dracula-secondary);
+	--user-profile-overlay-background: var(--dracula-primary);
 
-	// Brand
+	// Other Discord variables
+	--info-warning-foreground: var(--dracula-accent); // mentioned message left border
+	--text-link: var(--dracula-accent);
+	--mention-foreground: var(--dracula-accent);
+
+	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
+
+	// Discord Brand variables
 	--bg-brand: var(--dracula-accent);
 	--brand-500: var(--dracula-accent);
 	--blurple-50: var(--dracula-accent-alpha-90);

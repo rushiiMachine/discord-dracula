@@ -6,15 +6,15 @@ partially restores the old layout prior to the *visual refresh*
 
 ## ♡ installation
 
-Add the following snippet to the top of your custom css:
+Add the following snippet to the top of your custom css, and use dark mode:
 
 ```css
 @import url("https://dracula.rushii.dev/main.css");
 ```
 
-This url is proxied through Cloudflare to Github Pages to reduce latency!
+This url is proxied through Cloudflare to GitHub Pages to reduce latency!
 
-Alternatively, you can download the [`dracula.theme.css`] theme file to add to your
+Alternatively, you can download [`dracula.theme.css`] to add to your
 client mod's `themes` folder! (right-click > *Save As*)
 
 ---
