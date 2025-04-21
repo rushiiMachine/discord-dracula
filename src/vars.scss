@@ -92,9 +92,10 @@ body, .theme-dark.theme-darker {
 	// Other Discord variables
 	--info-warning-foreground: var(--dracula-accent); // mentioned message left border
 	--text-link: var(--dracula-accent);
-	--mention-foreground: var(--dracula-accent);
+	--background-modifier-selected: var(--dracula-accent-alpha-20);
 
 	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
+	--mention-foreground: var(--dracula-accent);
 
 	// Discord Brand variables
 	--bg-brand: var(--dracula-accent);
