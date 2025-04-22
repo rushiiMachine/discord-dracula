@@ -36,11 +36,6 @@ div[data-list-item-id^="guildsnav__"] > div[class^="folderIconWrapper_"] svg {
 	color: var(--dracula-accent) !important;
 }
 
-// Vencord plugin fix
-#vc-friendcount {
-	margin-bottom: var(--spacing-8);
-}
-
 // Better spacing between unread DMs and guilds
 div[class^="guildSeparator_"] {
 	margin-top: var(--spacing-12);

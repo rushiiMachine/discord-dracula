@@ -143,12 +143,6 @@ div[id^="message-accessories-"] {
 	}
 }
 
-// Better Vencord shiki codeblocks
-.vc-shiki-code {
-	border: none !important;
-	border-radius: var(--radius-xs);
-}
-
 // Bot tag on messages
 span[class*="botTagRegular_"] {
 	background-color: var(--bg-mod-strong);

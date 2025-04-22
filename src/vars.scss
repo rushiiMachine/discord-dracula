@@ -88,11 +88,15 @@ body, .theme-dark.theme-darker {
 	--background-message-hover: var(--dracula-accent-alpha-5);
 	--autocomplete-bg: var(--dracula-secondary);
 	--user-profile-overlay-background: var(--dracula-primary);
+	--card-primary-bg: var(--dracula-secondary);
+	--modal-footer-background: var(--dracula-tertiary);
+	--button-filled-brand-background: var(--dracula-accent-alpha-90);
 
-	// Other Discord variables
+	// Messages
+	--background-modifier-selected: var(--dracula-accent-alpha-20);
 	--info-warning-foreground: var(--dracula-accent); // mentioned message left border
 	--text-link: var(--dracula-accent);
-	--background-modifier-selected: var(--dracula-accent-alpha-20);
+	--mention-foreground: var(--dracula-accent);
 
 	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
 

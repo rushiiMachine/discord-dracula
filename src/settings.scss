@@ -17,3 +17,14 @@ button[class*="lookOutlined_"][class*="colorRed_"] {
 		background-color: var(--button-danger-background-hover) !important;
 	}
 }
+
+// Properly colored switches {
+div[class*="checked_"] {
+	background-color: var(--dracula-accent) !important;
+	border: none !important;
+}
+
+// Larger bottom padding for settings page
+div[class^="contentColumn_"] {
+	padding-bottom: 110px;
+}

@@ -1,0 +1,121 @@
+/**
+ * Theme fixes for specifically Vencord features/UI addons.
+ */
+
+/****** Vencord Settings Special Cards ******/
+
+// Remove the fancy background of cards
+.vc-special-card {
+	margin-bottom: 1.3em;
+	background: var(--dracula-secondary) none !important;
+}
+
+// Fix text colors
+
+.vc-special-title {
+	color: var(--text-primary);
+	font-weight: 700;
+	font-size: 1.2em;
+}
+
+.vc-special-subtitle, .vc-special-text {
+	color: var(--text-normal);
+}
+
+.vc-special-hyperlink {
+	margin: 0;
+}
+
+.vc-special-hyperlink-text {
+	font-weight: 600 !important;
+	text-decoration: underline;
+	color: var(--dracula-accent-light) !important;
+
+	&:hover {
+		filter: brightness(120%);
+	}
+}
+
+// Support card title
+.vc-special-card-flex-main:has(button) .vc-special-title {
+	margin-top: 6px;
+}
+
+// Donate button container
+.vc-special-card-flex-main > button {
+	background-color: var(--dracula-accent-alpha-90) !important;
+
+	&:hover {
+		filter: brightness(110%);
+	}
+}
+
+.vc-donate-button {
+	display: flex;
+	color: var(--text-primary);
+}
+
+.vc-heart-icon {
+	translate: 0;
+	filter: drop-shadow(0 1px 3px rgb(0 0 0 / 30%));
+}
+
+// Remove unnecessary title from contributors card
+.vc-special-card-flex-main:not(:has(> button)) .vc-special-title {
+	display: none;
+}
+
+// Remove unnecessary separators in contributors card
+.vc-special-seperator {
+	display: none;
+}
+
+// Remove white background of blobcatcozy images
+.vc-special-image-container {
+	background: none;
+}
+
+/****** Vencord Settings Buttons ******/
+
+// Settings buttons card
+.vc-settings-quickActions-card {
+	background: none !important;
+	padding: var(--spacing-8) 0;
+}
+
+// Settings buttons
+
+.vc-settings-quickActions-pill {
+	padding: var(--spacing-12);
+	font-weight: 500;
+	font-size: 15px;
+}
+
+.vc-settings-quickActions-img {
+	width: 20px;
+	height: 20px;
+	color: var(--dracula-accent);
+}
+
+/****** Vencord Plugin Cards ******/
+
+.vc-addon-card {
+	padding: 16px 20px;
+}
+
+/****** Vencord Plugins Settings ******/
+
+// Better shiki codeblocks
+.vc-shiki-code {
+	border-radius: var(--radius-xs);
+}
+
+// Better spacing between for channel typing indicator and the avatars
+.vc-typing-indicator-avatars {
+	margin-right: 4px;
+}
+
+// Online friend count in guilds list
+#vc-friendcount {
+	color: var(--text-secondary) !important;
+}
