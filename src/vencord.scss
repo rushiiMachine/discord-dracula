@@ -75,6 +75,7 @@
 	background: none;
 }
 
+
 /****** Vencord Settings Buttons ******/
 
 // Settings buttons card
@@ -97,11 +98,33 @@
 	color: var(--dracula-accent);
 }
 
-/****** Vencord Plugin Cards ******/
+
+/****** Vencord Plugin/Theme Cards ******/
 
 .vc-addon-card {
-	padding: 16px 20px;
+	padding: 14px 20px 20px;
 }
+
+// Add more info to own theme card
+.vc-settings-theme-grid .vc-addon-card a[href="https://github.com/rushiiMachine/discord-dracula"] {
+	// Collapse the original line
+	text-indent: -9999px;
+	line-height: 0;
+
+	&:hover {
+		text-decoration: underline;
+		filter: brightness(120%);
+	}
+
+	&::after {
+		text-indent: 0;
+		display: block;
+		line-height: initial; // New content takes up original line height
+		content: "Please consider leaving a star or sponsoring me on GitHub ♡";
+		font-size: 14px;
+	}
+}
+
 
 /****** Vencord Plugins Settings ******/
 
