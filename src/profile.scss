@@ -27,7 +27,6 @@ div[class^="sidebar_"] {
 		bottom: 2px;
 		width: calc(100% - var(--space-xs) * 2 - var(--custom-guild-list-width));
 		padding-left: 4px;
-		border: none;
 		background-color: var(--dracula-secondary);
 	}
 }

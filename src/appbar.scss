@@ -19,7 +19,6 @@ div[class^="container_"] > div[class^="base_"] {
 
 // Move search bar/buttons left to make space for window buttons moved down
 div[class^="chat_"] section[class*="container_"] {
-	border: none;
 	overflow: hidden !important;
 	background-color: var(--dracula-secondary);
 
@@ -94,7 +93,6 @@ section[class^="title_"] div[class^="children_"] {
 // Fix searchbar
 // TODO: align with chat?
 div[class^="searchBar_"] {
-	border: none !important;
 	height: 36px !important;
 	align-items: center;
 	padding: 2px 4px !important;

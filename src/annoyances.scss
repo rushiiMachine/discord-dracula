@@ -28,7 +28,7 @@ div[data-list-item-id^="channels___boosts"] {
 }
 
 // Remove "Create Invite" button from channel item
-a[data-list-item-id^="channels__"] div[class^="children_"] {
+a[data-list-item-id^="channels__"] div[class^="children_"] > div:has(path[d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"]) {
 	display: none;
 }
 

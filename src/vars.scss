@@ -95,10 +95,17 @@ body, .theme-dark.theme-darker {
 	--background-modifier-selected: var(--dracula-accent-alpha-20);
 
 	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
-	--mention-foreground: var(--dracula-accent);
+
+	// Borders
+	--border-normal: none;
+	--border-subtle: none;
+	--input-border: none;
+	--app-border-frame: none;
 
 	// Discord Brand variables
 	--bg-brand: var(--dracula-accent);
+	--brand-360: var(--dracula-accent);
 	--brand-500: var(--dracula-accent);
+	--brand-560: var(--dracula-accent-alpha-90);
 	--blurple-50: var(--dracula-accent-alpha-90);
 }

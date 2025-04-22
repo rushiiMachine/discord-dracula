@@ -4,15 +4,7 @@
 
 div[class^="sidebarList_"] {
 	// Remove borders
-	border: none !important;
 	border-radius: 0 !important;
-
-	// Remove channel list header borders
-	header[class^="header_"],
-	div[class^="headerGlass_"],
-	{
-		border: none !important;
-	}
 
 	// Floating mentions channels list indicator
 	div[class*="mentionsBar_"] {
@@ -24,7 +16,6 @@ div[class^="sidebarList_"] {
 	div[class^="bar_"]:has(svg[class^="unreadIcon_"]) {
 		--interactive-normal: var(--white-530); // text color
 
-		border: none;
 		background-color: var(--dracula-accent);
 		box-shadow: 0 4px 20px var(--opacity-black-56);
 	}
@@ -38,6 +29,11 @@ div[class^="sidebarList_"] {
 	div[class^="scroller_"] div[style="height: 12px;"] {
 		display: none;
 	}
+}
+
+// Remove random excess padding
+div[class^="sidebar_"]::after {
+	display: none;
 }
 
 /****** Channel Items ******/
@@ -54,8 +50,8 @@ div[class^="sidebarList_"] {
 #channels > ul {
 	padding-right: var(--spacing-4);
 
-	--text-primary: var(--white-560);
-	--icon-primary: var(--white-560);
+	--text-primary: var(--white-530);
+	--icon-primary: var(--white-530);
 
 	// Original channel unread indicator
 	div[class^="unread_"] {
@@ -88,6 +84,10 @@ div[class^="sidebarList_"] {
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
 		}
+
+		svg {
+			--icon-primary: var(--dracula-accent);
+		}
 	}
 
 	// Remove padding between channel items
@@ -97,13 +97,14 @@ div[class^="sidebarList_"] {
 	}
 
 	// Better internal padding for channel items
-	a[data-list-item-id^="channels_"] {
+	a[data-list-item-id^="channels_"],
+	div[data-list-item-id^="channels_"][class^="link_"] {
 		padding-top: 5.25px;
 		padding-bottom: 5.25px;
 	}
 
-	// Better margin for category items
-	div[data-list-item-id^="channels_"] {
+	// Better margin for category items and thread items
+	div[data-list-item-id^="channels_"][class^="mainContent_"] {
 		padding-bottom: 0.7rem;
 	}
 }
