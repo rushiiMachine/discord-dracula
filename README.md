@@ -12,7 +12,12 @@ Add the following snippet to the top of your custom css, and use dark mode:
 @import url("https://dracula.rushii.dev/main.css");
 ```
 
-This url is proxied through Cloudflare to GitHub Pages to reduce latency!
+This url is proxied through Cloudflare to reduce latency!
+If you aren't a fan of Cloudflare, you can use the direct GitHub Pages url:
+
+```css
+@import url("https://rushiiMachine.github.io/discord-dracula/main.css");
+```
 
 Alternatively, you can download [`dracula.theme.css`] to add to your
 client mod's `themes` folder! (right-click > *Save As*)

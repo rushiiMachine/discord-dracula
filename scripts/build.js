@@ -21,10 +21,9 @@ try {
  * @name dracula
  * @description cute dracula theme for discord~
  * @author rushii
- * @version 1.0.0
  * @website https://github.com/rushiiMachine/discord-dracula
- * @source https://dracula.rushii.dev/main.css
  */
+/* This file is not versioned and is not linked to an update URL! */
 `.trimStart();
 
 	const result = sass.compile(srcPath, {
