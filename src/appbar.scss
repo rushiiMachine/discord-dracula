@@ -91,7 +91,6 @@ section[class^="title_"] div[class^="children_"] {
 // TODO: make title have ellipsis
 
 // Fix searchbar
-// TODO: align with chat?
 div[class^="searchBar_"] {
 	height: 36px !important;
 	align-items: center;
@@ -111,4 +110,35 @@ div[class^="searchBar_"] {
 		padding: 0 !important;
 		margin-left: var(--spacing-4);
 	}
+
+	.public-DraftEditor-content > div,
+	.public-DraftEditor-content > div > div,
+	.public-DraftEditor-content > div > div > div {
+		height: inherit;
+		overflow: hidden;
+	}
+
+	.public-DraftStyleDefault-block {
+		place-content: center;
+	}
+
+	// Search filter badge background
+	--background-surface-highest: var(--dracula-accent-alpha-15);
+
+	// Search filter pair left hand side
+	div[class*="searchFilter_"] {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	// Search filter pair right hand side
+	div[class*="searchAnswer_"] {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+// Remove left indicator from searchbar autocomplete
+li[aria-selected="true"][class^="option_"] {
+	box-shadow: none;
 }

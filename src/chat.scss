@@ -158,3 +158,10 @@ div[class^="autocomplete_"] {
 	padding-left: 8px;
 	box-shadow: var(--shadow-medium);
 }
+
+/****** Search Sidebar ******/
+
+// Larger search sidebar
+section[class^="searchResultsWrap_"] {
+	width: 550px;
+}
