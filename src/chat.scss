@@ -19,9 +19,12 @@ div[class^="newMessagesBar"] {
 	justify-self: center;
 	background-color: var(--dracula-accent-alpha-90);
 	box-shadow: 0 2px 12px var(--opacity-black-56);
-	animation-name: unread-messages-bar-enter;
-	animation-duration: 150ms;
-	animation-fill-mode: backwards;
+
+	.full-motion & {
+		animation-name: unread-messages-bar-enter;
+		animation-duration: 150ms;
+		animation-fill-mode: backwards;
+	}
 }
 
 // Nicer "You are viewing older messages" bar
@@ -133,9 +136,12 @@ form[class*="formWithLoadedChatInput_"] div[class^="typing_"] {
 	padding: 3px 8px;
 	transition: none;
 	box-shadow: 0 -2px 6px var(--opacity-black-16);
-	animation-name: typing-bar-enter; // TODO: respect reduced motion
-	animation-duration: 150ms;
-	animation-fill-mode: backwards;
+
+	.full-motion & {
+		animation-name: typing-bar-enter;
+		animation-duration: 150ms;
+		animation-fill-mode: backwards;
+	}
 }
 
 // Fix end of chat list padding to make room for typing users

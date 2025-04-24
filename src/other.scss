@@ -63,7 +63,7 @@ div[class*="listAvatar_"] {
 }
 
 // Animate the typing dots
-svg[class*="dots_"] > g {
+.full-motion svg[class*="dots_"] > g {
 	& > circle {
 		animation: typing-dots-cycle 4s ease infinite;
 	}
