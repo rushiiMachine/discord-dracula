@@ -32,17 +32,12 @@ div[class^="jumpToPresentBar_"] {
 
 /****** Chat Layout & Chat Input ******/
 
-// Better padding between chat bar and bottom message
-div[class^="scrollerSpacer_"] {
-	height: var(--space-16) !important;
-}
-
 // Nicer chat bar
 div[class^="channelTextArea_"] {
 	border-radius: 50px;
 	margin-left: var(--spacing-16);
 	margin-right: var(--spacing-16);
-	margin-bottom: var(--spacing-16);
+	margin-bottom: var(--spacing-12);
 
 	div[class^="buttons_"] {
 		gap: 0 !important;
@@ -107,6 +102,48 @@ main[class^="chatContent_"] {
 	}
 }
 
+
+/****** Chat Input Typing Users ******/
+
+@keyframes typing-bar-enter {
+	0% {
+		top: 0;
+	}
+
+	100% {
+		top: -20px;
+	}
+}
+
+// Chat bar overlay the typing bar
+div[class^="channelTextArea_"] {
+	z-index: 1;
+	border: none;
+}
+
+// Align typing users bar above chat bar
+form[class*="formWithLoadedChatInput_"] div[class^="typing_"] {
+	top: -20px; // Move above chat bar
+	z-index: 0; // Under the chat bar
+	margin-left: 26px;
+	margin-right: 30px; // Because of text field rounding
+	height: min-content;
+	border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+	background-color: var(--chat-background-default);
+	padding: 3px 8px;
+	transition: none;
+	box-shadow: 0 -2px 6px var(--opacity-black-16);
+	animation-name: typing-bar-enter; // TODO: respect reduced motion
+	animation-duration: 150ms;
+	animation-fill-mode: backwards;
+}
+
+// Fix end of chat list padding to make room for typing users
+div[class^="scrollerSpacer_"] {
+	height: 30px !important;
+}
+
+
 /****** Chat Items ******/
 
 // Better reactions container
@@ -123,11 +160,10 @@ div[class^="divider_"] {
 	}
 }
 
-// Remove border from embeds
-article[class^="embedWrapper_"], article[class^="embedFull_"] {
-	border-top: none !important;
-	border-bottom: none !important;
-	border-right: none !important;
+// Embeds
+article[class^="embedWrapper_"] {
+	padding-left: var(--spacing-8);
+	padding-top: var(--spacing-4);
 }
 
 // Slightly better padding between message header and content
@@ -137,8 +173,14 @@ h3[aria-labelledby^="message-username-"] {
 
 div[id^="message-accessories-"] {
 	// Less rounding on message media
-	& > div[class^="visualMediaItemContainer_"],
-	& > div[class^="visualMediaItemContainer_"] * {
+	div[class^="visualMediaItemContainer_"],
+	div[class^="visualMediaItemContainer_"] > div,
+	div[class*="mosaicItemMediaMosaic_"],
+	div[class*="mosaicItemContent_"],
+	div[class*="wrapperMediaMosaic_"],
+	div[class*="spoilerContainer_"],
+	video,
+	{
 		border-radius: var(--radius-xs);
 	}
 }

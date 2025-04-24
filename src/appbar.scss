@@ -115,7 +115,6 @@ div[class^="searchBar_"] {
 	.public-DraftEditor-content > div > div,
 	.public-DraftEditor-content > div > div > div {
 		height: inherit;
-		overflow: hidden;
 	}
 
 	.public-DraftStyleDefault-block {
@@ -135,6 +134,7 @@ div[class^="searchBar_"] {
 	div[class*="searchAnswer_"] {
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
+		padding-left: 0;
 	}
 }
 
