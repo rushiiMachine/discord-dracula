@@ -14,7 +14,10 @@ const benchScriptPath = join(import.meta.dirname, "./benchmark.js");
 const css = readFileSync(cssPath, {encoding: "utf-8"});
 const benchScript = readFileSync(benchScriptPath, {encoding: "utf-8"});
 
-/** @param {CDP.Client} client */
+/**
+ * Runs the benchmarking through a CDP connection specific to the target execution context.
+ * @param {CDP.Client} client
+ */
 async function runBenchmark(client) {
 	const {Runtime} = client;
 
@@ -53,6 +56,7 @@ async function runBenchmark(client) {
 	});
 	table.push(...lines);
 
+	console.log();
 	console.log(table.toString());
 }
 
@@ -60,29 +64,32 @@ async function run() {
 	/** @type CDP.Client */
 	let client;
 
-	console.log();
-	console.log(dateHeader() + chalk.yellow(" Please note that repeatedly benchmarking the " +
-		"same selectors on a running instance of Discord will yield optimized numbers, " +
-		"that are not really accurate."));
-	console.log(dateHeader() + chalk.yellow(" You should restart Discord between multiple " +
-		"benchmarks via " + chalk.bold(chalk.underline("pnpm launchDiscord"))));
-	console.log();
-
 	try {
-		// Connect to chrome debugging interface
-		console.log(dateHeader() + " Connecting to chrome debugging port at 9222...");
-		client = await CDP();
+		console.log();
+		console.log(dateHeader() + " Finding debugging targets...");
+		const targets = await CDP.List({port: 9222})
+		const target = targets.find(t =>
+			t.type === "page" && t.url !== t.title && t.url.startsWith("https://discord.com/"))
+
+		if (!target) {
+			console.log(dateHeader() + chalk.yellow(" Failed to find Discord page target! " +
+				"Was Discord launched via the " +
+				chalk.bold(chalk.underline("pnpm launchDiscord")) +
+				" command?"));
+			return;
+		}
+		console.log(dateHeader() +
+			chalk.green(" Found debugging url: ") +
+			chalk.dim(chalk.gray(target.webSocketDebuggerUrl)) +
+			", title: " +
+			chalk.dim(chalk.gray(target.title)));
+
+		// Connect to the chrome debugging interface
+		console.log(dateHeader() + " Connecting to the debugger interface...");
+		client = await CDP({target: target.webSocketDebuggerUrl});
 		console.log(dateHeader() + chalk.green(" Connected!"));
 
-		// Log info about the target page
-		const targets = await client.Target.getTargets();
-		const targetPage = targets.targetInfos.find(t => t.attached);
-		console.log(dateHeader() + " Target browser page:");
-		console.log(targetPage);
-
-		console.log();
 		console.log(dateHeader() + " Running benchmark...");
-
 		await runBenchmark(client);
 
 		console.log();
@@ -90,7 +97,7 @@ async function run() {
 			chalk.bold(chalk.underline("benchmark.csv"))));
 		console.log(dateHeader() + chalk.yellow(" Note that these benchmark results are " +
 			"specific to the current screen opened in Discord!"));
-		console.log(dateHeader() + chalk.yellow(" Running the benchmark on other screens " +
+		console.log(dateHeader() + chalk.yellow(" Changes to the current layout " +
 			"will produce different results."));
 	} catch (err) {
 		console.error(err);
