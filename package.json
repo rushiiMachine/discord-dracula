@@ -7,6 +7,7 @@
 		"bench": "pnpm dev && node ./scripts/remoteBenchmark.js",
 		"build": "pnpm lint && node ./scripts/build.js",
 		"dev": "node ./scripts/dev.js",
+		"launchDiscord": "node ./scripts/launchDiscord.js",
 		"lint": "stylelint \"./src/**.scss\"",
 		"lint:fix": "pnpm lint --fix",
 		"watch": "pnpm dev --watch"

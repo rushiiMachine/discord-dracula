@@ -58,6 +58,8 @@ async function run() {
 	console.log(dateHeader() + chalk.yellow(" Please note that repeatedly benchmarking the " +
 		"same selectors on a running instance of Discord will yield optimized numbers, " +
 		"that are not really accurate."));
+	console.log(dateHeader() + chalk.yellow(" You should restart Discord between multiple " +
+		"benchmarks via " + chalk.bold(chalk.underline("pnpm launchDiscord"))));
 	console.log();
 
 	try {
