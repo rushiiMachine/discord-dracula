@@ -70,7 +70,7 @@ async function run() {
 
 		// Log info about the target page
 		const targets = await client.Target.getTargets();
-		const targetPage = targets.targetInfos.find(t => t.type === "page");
+		const targetPage = targets.targetInfos.find(t => t.attached);
 		console.log(dateHeader() + " Target browser page:");
 		console.log(targetPage);
 

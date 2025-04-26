@@ -32,7 +32,12 @@
 
 /****** Colors ******/
 
-body, .theme-dark.theme-darker {
+body,
+.visual-refresh.theme-dark,
+.visual-refresh.theme-darker,
+.visual-refresh.theme-midnight,
+.theme-dark.theme-darker,
+{
 	/* Theme color palette */
 	--dracula-primary: #282a36;
 	--dracula-secondary: #242631;
@@ -47,6 +52,7 @@ body, .theme-dark.theme-darker {
 	--dracula-accent-alpha-20: rgb(189 147 249 / 20%);
 	--dracula-accent-alpha-50: rgb(189 147 249 / 35%);
 	--dracula-accent-alpha-75: rgb(189 147 249 / 50%);
+	--dracula-accent-alpha-85: rgb(189 147 249 / 85%);
 	--dracula-accent-alpha-90: rgb(189 147 249 / 90%);
 	--dracula-accent-dark: #7b49c0;
 	--dracula-accent-light: #d4b5ff;
@@ -69,6 +75,7 @@ body, .theme-dark.theme-darker {
 	--bg-base-primary: var(--dracula-primary);
 	--bg-base-secondary: var(--dracula-secondary);
 	--bg-base-tertiary: var(--dracula-secondary);
+	--bg-surface-overlay: var(--dracula-primary);
 	--background-base-low: var(--dracula-primary);
 	--background-base-lower: var(--dracula-primary);
 	--background-base-lowest: var(--dracula-secondary);
@@ -90,7 +97,8 @@ body, .theme-dark.theme-darker {
 	--user-profile-overlay-background: var(--dracula-primary);
 	--card-primary-bg: var(--dracula-secondary);
 	--modal-footer-background: var(--dracula-tertiary);
-	--button-filled-brand-background: var(--dracula-accent-alpha-90);
+	--button-filled-brand-background: var(--dracula-accent-alpha-85);
+	--button-filled-brand-background-hover: var(--dracula-accent);
 
 	// Messages
 	--background-modifier-selected: var(--dracula-accent-alpha-20);
@@ -101,10 +109,11 @@ body, .theme-dark.theme-darker {
 	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
 
 	// Borders
-	--border-normal: none;
-	--border-subtle: none;
-	--input-border: none;
-	--app-border-frame: none;
+	--border-normal: transparent;
+	--border-subtle: transparent;
+	--border-faint: transparent;
+	--input-border: transparent;
+	--app-border-frame: transparent;
 
 	// Discord Brand variables
 	--bg-brand: var(--dracula-accent);
