@@ -1,50 +1,52 @@
 // Based on https://github.com/refact0r/system24/blob/main/benchmark/benchmark.js
 // MIT License Copyright (c) 2024 refact0r
 
-function benchmarkSelectors(css) {
-	function extractSelectors(css) {
-		// Remove comments
-		css = css.replace(/\/\*[\s\S]*?\*\//g, '');
+// The $benchmarkSelectors(css) function should be used within a DOM environment.
 
-		// Remove nested brackets
-		let result = '';
-		let depth = 0;
-		for (let char of css) {
-			if (char === '{') depth++;
-			else if (char === '}') depth--;
-			else if (depth === 0) result += char;
-		}
-		css = result;
+function $extractSelectors(css) {
+	// Remove comments
+	css = css.replace(/\/\*[\s\S]*?\*\//g, '');
 
-		return css
-			// Split by commas or newline
-			.split(/,(?![^(]*\))|[\n\r]+/)
-			// Trim pseudo-elements
-			.map((s) => s.trim().replace(/::(?:before|after)/, ''))
-			// Remove empty strings
-			.filter(Boolean)
-			// Remove non-selectors
-			.filter(s => !["@charset", "@import", "@keyframes",].find(i => s.startsWith(i)));
+	// Remove nested brackets
+	let result = '';
+	let depth = 0;
+	for (let char of css) {
+		if (char === '{') depth++;
+		else if (char === '}') depth--;
+		else if (depth === 0) result += char;
 	}
+	css = result;
 
-	function benchmarkSelector(selector) {
-		// Going higher doesn't mean more accurate results, just that
-		// chromium has optimized for that specific selector making it seem faster.
-		const runCount = 100;
+	return css
+		// Split by commas or newline
+		.split(/,(?![^(]*\))|[\n\r]+/)
+		// Trim pseudo-elements
+		.map((s) => s.trim().replace(/::(?:before|after)/, ''))
+		// Remove empty strings
+		.filter(Boolean)
+		// Remove non-selectors
+		.filter(s => !["@charset", "@import", "@keyframes",].find(i => s.startsWith(i)));
+}
 
-		const start = performance.now();
-		let matches = 0;
+function $benchmarkSelector(selector) {
+	// Going higher doesn't mean more accurate results, just that
+	// chromium has optimized for that specific selector making it seem faster.
+	const runCount = 100;
 
-		for (let i = 0; i < runCount; i++)
-			matches = document.querySelectorAll(selector).length;
+	const start = performance.now();
+	let matches = 0;
 
-		return [(performance.now() - start) / runCount, matches];
-	}
+	for (let i = 0; i < runCount; i++)
+		matches = document.querySelectorAll(selector).length;
 
-	return extractSelectors(css)
+	return [(performance.now() - start) / runCount, matches];
+}
+
+function $benchmarkSelectors(css) {
+	return $extractSelectors(css)
 		.map((selector) => {
 			try {
-				const [time, matches] = benchmarkSelector(selector);
+				const [time, matches] = $benchmarkSelector(selector);
 				return {selector, time, matches};
 			} catch (error) {
 				console.error(`Error benchmarking "${selector}": ${error.message}`);

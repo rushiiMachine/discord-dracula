@@ -68,14 +68,16 @@ try {
 	console.log(dateHeader() + " Launching Discord...");
 
 	// Spawn new process and detach it
-	const proc = spawn(electronPath, ["--remote-debugging-port=9222"], {
+	const proc = spawn(electronPath, [
+		"--remote-debugging-port=9222",
+		"--js-flags=--allow-natives-syntax",
+	], {
 		detached: true,
 		stdio: ["ignore", "ignore", "ignore",]
 	});
 	proc.unref();
 
-	console.log(dateHeader() + chalk.green(" Successfully launched Discord with " +
-		chalk.bold("--remote-debugging-port=9222")));
+	console.log(dateHeader() + chalk.green(" Successfully launched Discord with flags!"));
 } catch (e) {
 	console.log(e);
 	console.log();

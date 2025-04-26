@@ -18,15 +18,21 @@ const benchScript = readFileSync(benchScriptPath, {encoding: "utf-8"});
 async function runBenchmark(client) {
 	const {Runtime} = client;
 
-	// Load benchmark function
+	// Load benchmarking functions & disable optimization for them
 	await Runtime.evaluate({
-		expression: benchScript,
+		returnByValue: false,
+		expression: benchScript + `;
+			%NeverOptimizeFunction($benchmarkSelector);
+			%NeverOptimizeFunction($benchmarkSelectors);
+			%DeoptimizeFunction($benchmarkSelector);
+			%DeoptimizeFunction($benchmarkSelectors);
+		`,
 	});
 
 	// Run benchmarking for our built css
 	/** @type EvaluateResponse */
 	const result = await Runtime.evaluate({
-		expression: `benchmarkSelectors(\`${css}\`)`,
+		expression: `$benchmarkSelectors(\`${css}\`)`,
 	});
 
 	/** @type string */
@@ -93,9 +99,9 @@ async function run() {
 		// CDP connection error
 		if (err.message.includes("ECONNREFUSED")) {
 			console.log(dateHeader() + chalk.yellow(" Failed to connect to the debugging " +
-				"port! Was Discord launched with the " +
-				chalk.underline(chalk.bold("--remote-debugging-port=9222")) +
-				" flag?"));
+				"port! Was Discord launched via the " +
+				chalk.bold(chalk.underline("pnpm launchDiscord")) +
+				" command?"));
 		}
 
 		console.log(dateHeader() + chalk.red(" Failed to run benchmark!"));
