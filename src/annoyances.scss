@@ -23,7 +23,7 @@ div[data-list-id^="private-channels"] {
 /****** Channels List ******/
 
 // Hide boosts level bar
-div[data-list-item-id^="channels___boosts"] {
+div[class^="sidebarList_"] div[class^="scroller_"] > ul > li:has(div[data-list-item-id^="channels___progress-bar-"]) {
 	display: none;
 }
 

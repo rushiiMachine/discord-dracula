@@ -198,6 +198,7 @@ span[class*="botTagRegular_"] {
 	margin-left: 0.5rem;
 }
 
+
 /****** Autocomplete ******/
 
 // Autocomplete popup
@@ -207,9 +208,47 @@ div[class^="autocomplete_"] {
 	box-shadow: var(--shadow-medium);
 }
 
+
 /****** Search Sidebar ******/
 
 // Larger search sidebar
 section[class^="searchResultsWrap_"] {
 	width: 550px;
+}
+
+
+/****** Reaction Picker ******/
+
+#emoji-picker-tab-panel {
+	// Fix background colors
+	& > div[class*="categoryList_"], div[class^="inspector_"] {
+		background-color: var(--dracula-secondary);
+	}
+
+	#emoji-picker-grid, #emoji-picker-grid div[class*="header_"] {
+		background-color: var(--dracula-primary);
+	}
+
+	#emoji-picker-grid {
+		border-top-left-radius: var(--radius-md);
+		border-bottom-left-radius: var(--radius-md);
+	}
+
+	& > div[class^="emojiPicker_"] > div[class^="header_"] {
+		padding: 0 10px 12px 16px;
+	}
+
+	// Remove "Popular"/"Newly Added" emoji badge
+	div[class*="badgeLabel_"] {
+		display: none;
+	}
+
+	// Remove newly added container around emojis in picker
+	div[class^="newlyAddedHighlight_"] {
+		border: none;
+	}
+
+	div[class^="newlyAddedBadge_"] {
+		display: none;
+	}
 }
