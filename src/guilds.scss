@@ -36,8 +36,23 @@ div[data-list-item-id^="guildsnav__"] > div[class^="folderIconWrapper_"] svg {
 	color: var(--dracula-accent) !important;
 }
 
+// Pending guild applications folder (clans)
+ul[data-list-id="guildsnav"] > div > div[class^="stack_"] > div[class^="container_"] {
+	margin-top: 8px;
+
+	div[class^="folderWrapperCollapsed_"] {
+		margin-top: 0;
+		margin-bottom: 8px;
+	}
+
+	svg[class^="pendingIcon_"] {
+		color: var(--dracula-accent);
+	}
+}
+
 // Better spacing between unread DMs and guilds
 div[class^="guildSeparator_"] {
 	margin-top: var(--spacing-12);
-	margin-bottom: var(--spacing-12);
+	margin-bottom: var(--spacing-8);
+	background-color: rgba(255 255 255 / 15%) !important;
 }
