@@ -5,6 +5,8 @@ import chalk from "chalk";
 import dotenv from "dotenv";
 import * as sass from "sass";
 
+import {dateHeader} from "./utils.js";
+
 const dotenvResult = dotenv.config();
 const themesDir = dotenvResult.parsed?.THEMES_DIR;
 
@@ -38,13 +40,6 @@ if (!existsSync(themesDir)) {
 	console.log();
 
 	process.exit(1);
-}
-
-function dateHeader() {
-	const date = new Date().toLocaleString()
-		.replace(",", "");
-
-	return chalk.gray(`[${date}]`);
 }
 
 function compile() {

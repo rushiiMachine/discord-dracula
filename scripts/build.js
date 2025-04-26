@@ -3,17 +3,12 @@ import {join} from "node:path";
 import chalk from "chalk";
 import * as sass from "sass";
 
+import {dateHeader} from "./utils.js";
+
 const srcPath = join(import.meta.dirname, "../src/main.scss");
 const distPath = join(import.meta.dirname, "../dist");
 const outCssPath = join(distPath, "main.css");
 const outMapPath = join(distPath, "main.css.map");
-
-function dateHeader() {
-	const date = new Date().toLocaleString()
-		.replace(",", "");
-
-	return chalk.gray(`[${date}]`);
-}
 
 try {
 	let output = `

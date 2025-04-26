@@ -51,10 +51,10 @@ function benchmarkSelectors(css) {
 				return null;
 			}
 		})
-		.filter(Boolean)
-		.sort((a, b) => b.time - a.time)
+		.filter(Boolean) // Remove failed benchmarks
+		.sort((a, b) => b.time - a.time) // Sort by time descending
 		.map(({selector, time, matches}) =>
 			`"${selector.replaceAll('"', '""')}",${time.toFixed(4)},${matches}`)
 		.join('\n')
-		.replace(/^/, 'Selector,Time (ms),Matches\n');
+		.replace(/^/, 'Selector,Time (ms),Matches\n'); // Add CSV headers
 }
