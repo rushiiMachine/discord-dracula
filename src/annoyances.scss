@@ -22,13 +22,21 @@ div[data-list-id^="private-channels"] {
 
 /****** Channels List ******/
 
-// Hide boosts level bar
-div[class^="sidebarList_"] div[class^="scroller_"] > ul > li:has(div[data-list-item-id^="channels___progress-bar-"]) {
-	display: none;
+div[class^="sidebarList_"] div[class^="scroller_"] > ul > li {
+	& > div[data-list-item-id^="channels___progress-bar-"], // Hide onboarding progress bar
+	& > div[data-list-item-id^="channels___boosts"], // Hide nitro boosts level bar
+	{
+		display: none;
+
+		// Hide following separator
+		& + div[role="separator"] { // stylelint-disable-line no-descending-specificity
+			display: none;
+		}
+	}
 }
 
 // Remove "Create Invite" button from channel item
-a[data-list-item-id^="channels__"] div[class^="children_"] > div:has(path[d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"]) {
+a[data-list-item-id^="channels__"] div[class^="children_"] > div:has(> svg > path[d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"]) {
 	display: none;
 }
 
@@ -47,14 +55,8 @@ ul[data-list-id="guildsnav"] div[class^="listItem_"]:has(foreignObject > div[dat
 	display: none;
 }
 
-#user-profile-overflow-menu {
-	div > [class="separator_c1e9c4"] {
-		display: none;
-	}
-
-	#user-profile-overflow-menu-invite-to-server {
-		display: none;
-	}
+#user-profile-overflow-menu-invite-to-server {
+	display: none;
 }
 
 // Remove "Add Note"

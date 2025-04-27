@@ -58,6 +58,13 @@ async function runBenchmark(client) {
 
 	console.log();
 	console.log(table.toString());
+
+	const totalTime = lines
+		.reduce((acc, [, time,]) => acc + parseFloat(time), 0)
+		.toFixed(4);
+
+	console.log();
+	console.log(`Total time of all selectors: ${totalTime}ms`);
 }
 
 async function run() {
