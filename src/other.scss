@@ -115,6 +115,6 @@ div[class^="menu_"], div[class^="submenu_"] {
 }
 
 /****** Other Popouts ******/
-div[class^="container_"], div[class^="root_"] {
+div[class^="container_"], div[class^="root_"], div[class^="tooltip_"] {
 	border: none !important;
 }

@@ -2,6 +2,80 @@
  * Theming for user profiles (compact and expanded).
  */
 
+/****** User Profile Popout ******/
+
+// Better inner padding
+.user-profile-modal div[class^="container_"] {
+	& > div[class^="tabBar_"] {
+		padding: 0 26px;
+		justify-content: space-between;
+		border-bottom: 2px solid var(--user-profile-border);
+	}
+
+	// About Me tab body
+	& > div[class^="scroller_"] {
+		padding: 16px 26px 28px !important;
+
+		& > :first-child::before {
+			content: "Biography";
+			font-family: var(--font-primary);
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 2.2;
+			margin-bottom: 100px;
+			padding-bottom: 100px;
+			overflow: visible;
+		}
+	}
+
+	// All other tab bodies
+	& > div[class^="listScroller_"] {
+		padding-left: 10px;
+		padding-top: 18px;
+	}
+
+	// Change Status text button
+	span[class^="inner_"] {
+		cursor: pointer;
+	}
+
+	// User notes
+	div[class^="note_"] > textarea {
+		margin-top: 6px;
+		padding: 8px;
+		background-color: var(--dracula-tertiary);
+		border: 1px solid transparent;
+
+		&:focus {
+			border: 1px solid var(--dracula-accent);
+		}
+	}
+}
+
+// Roles
+div[class^="role_"] {
+	border: none;
+	background-color: var(--dracula-tertiary);
+	padding: 8px 6px;
+	gap: 2px;
+}
+
+// Add role button
+div[data-list-id^="roles-"] > div > button {
+	border: none;
+}
+
+// User account connection card
+div[class^="connectedAccountContainer_"] {
+	border: none;
+	background-color: var(--dracula-tertiary);
+
+	img {
+		filter: brightness(80%);
+	}
+}
+
+
 /****** Current User Bar ******/
 
 // No persistent red background glow on mute/deafen buttons
