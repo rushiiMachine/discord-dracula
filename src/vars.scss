@@ -111,11 +111,9 @@ body,
 	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
 
 	// Borders
-	--border-normal: transparent;
-	--border-subtle: transparent;
-	--border-faint: transparent;
-	--input-border: transparent;
-	--app-border-frame: transparent;
+	--border-normal: none;
+	--input-border: none;
+	--app-border-frame: none;
 
 	// Discord Brand variables
 	--bg-brand: var(--dracula-accent);

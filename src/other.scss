@@ -1,5 +1,10 @@
 /****** Inbox popout ******/
 
+// Remove border from messages
+div[class^="layerContainer_"] div[class^="messageContainer_"] {
+	border: none;
+}
+
 // Better padding for Friend Requests tab
 div[data-list-id="for-you"] {
 	margin-top: var(--spacing-16);
@@ -27,6 +32,7 @@ div[class*="recentMentionsPopout_"] {
 /****** Channel topic popout ******/
 
 div[class^="modal_"] {
+	border: none !important;
 	border-radius: 8px !important;
 	padding-bottom: 8px;
 }
@@ -88,8 +94,9 @@ div[class^="menu_"], div[class^="submenu_"] {
 	--header-primary: var(--white-560); // text color
 
 	background-color: var(--dracula-tertiary);
-	border-radius: 8px;
 	box-shadow: var(--shadow-low);
+	border-radius: 8px;
+	border: none;
 
 	& > div {
 		padding: 8px 10px;
@@ -105,4 +112,9 @@ div[class^="menu_"], div[class^="submenu_"] {
 			image-rendering: smooth;
 		}
 	}
+}
+
+/****** Other Popouts ******/
+div[class^="container_"], div[class^="root_"] {
+	border: none !important;
 }

@@ -4,7 +4,15 @@
 
 div[class^="sidebarList_"] {
 	// Remove borders
+	border: none !important;
 	border-radius: 0 !important;
+
+	// Remove channel list header borders
+	header[class^="header_"],
+	div[class^="headerGlass_"],
+	{
+		border: none !important;
+	}
 
 	// Floating mentions channels list indicator
 	div[class*="mentionsBar_"] {

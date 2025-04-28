@@ -80,6 +80,7 @@
 
 // Settings buttons card
 .vc-settings-quickActions-card {
+	border: none !important;
 	background: none !important;
 	padding: var(--spacing-8) 0;
 }
@@ -101,8 +102,13 @@
 
 /****** Vencord Plugin/Theme Cards ******/
 
+.vc-plugins-info-card, .vc-settings-card {
+	border: none !important;
+}
+
 .vc-addon-card {
 	padding: 14px 20px 20px;
+	border: none !important;
 }
 
 // Add more info to own theme card
@@ -136,6 +142,15 @@
 // Better spacing between for channel typing indicator and the avatars
 .vc-typing-indicator-avatars {
 	margin-right: 4px;
+}
+
+// Order channel typing indicators after buttons/mention count
+.vc-typing-indicator {
+	order: 1;
+}
+
+a[data-list-item-id^="channels__"] > div > div[class^="children_"] {
+	order: 2;
 }
 
 // Online friend count in guilds list

@@ -83,6 +83,11 @@ div[class^="toolbar_"] {
 	}
 }
 
+// Remove "Follow" button from announcement channel titles
+section[class^="title_"] button[class^="followButton_"] {
+	display: none;
+}
+
 
 /****** Chat ******/
 
