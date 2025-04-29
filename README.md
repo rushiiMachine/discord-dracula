@@ -18,24 +18,17 @@ partially restores the old layout prior to the *visual refresh*
 
 ## ♡ installation
 
-Add the following snippet to the top of your custom css, and use dark mode:
-
-```css
-@import url("https://dracula.rushii.dev/main.css");
-```
-
-This url is proxied through Cloudflare to reduce latency!
-If you aren't a fan of Cloudflare, you can use the direct GitHub Pages url:
+Add the following snippet **to the top** of your custom css, and **enable dark mode**:
 
 ```css
 @import url("https://rushiiMachine.github.io/discord-dracula/main.css");
 ```
 
-Alternatively, you can download [`dracula.theme.css`] to add to your
+Alternatively, you can download [`dracula.theme.css`] and add it to your
 client mod's `themes` folder! (right-click > *Save As*)
 
 If using Vencord, it is recommended to enable the `PlainFolderIcon` plugin in order
-to get the same simple folder icons as shown in the screenshots!
+to always display the folder icons shown in the screenshots!
 
 ---
 
