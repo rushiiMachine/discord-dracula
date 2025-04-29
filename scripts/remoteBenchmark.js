@@ -5,7 +5,7 @@ import chalk from "chalk";
 import Table from "cli-table3";
 import CDP from "chrome-remote-interface";
 
-import {dateHeader} from "./utils.js";
+import {clamp, dateHeader} from "./utils.js";
 
 const cssPath = join(import.meta.dirname, "../dist/dev.css");
 const outCsvPath = join(import.meta.dirname, "../benchmark.csv");
@@ -49,10 +49,18 @@ async function runBenchmark(client) {
 		skipEmptyLines: true,
 	});
 
+	const maxSelectorLength = Math.max(...lines.map(([selector]) => selector.length));
+	const terminalWidth = process.stdout.columns || Number.MAX_SAFE_INTEGER;
+	const selectorsColWidth = clamp(
+		maxSelectorLength,
+		80,
+		terminalWidth - 11 - 9 - 4,
+	);
+
 	// Make a table from the csv
 	const table = new Table({
 		head: lines.shift(),
-		colWidths: [110, 11, 9],
+		colWidths: [selectorsColWidth, 11, 9],
 	});
 	table.push(...lines);
 
