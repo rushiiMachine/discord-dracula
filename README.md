@@ -4,6 +4,18 @@ cute dracula theme for discord~
 
 partially restores the old layout prior to the *visual refresh*
 
+<img src=".github/assets/showcase_1.webp" alt="Theme preview of the chat">
+
+<details>
+<summary><b>Additional Screenshots</b></summary>
+<br/>
+<img src=".github/assets/showcase_2.webp" alt="Another preview of the chat">
+<br/><br/>
+<img src=".github/assets/showcase_3.webp" alt="Theme preview of the chat">
+<br/><br/>
+<img src=".github/assets/showcase_4.webp" alt="Theme preview of the chat">
+</details>
+
 ## ♡ installation
 
 Add the following snippet to the top of your custom css, and use dark mode:
@@ -22,13 +34,16 @@ If you aren't a fan of Cloudflare, you can use the direct GitHub Pages url:
 Alternatively, you can download [`dracula.theme.css`] to add to your
 client mod's `themes` folder! (right-click > *Save As*)
 
+If using Vencord, it is recommended to enable the `PlainFolderIcon` plugin in order
+to get the same simple folder icons as shown in the screenshots!
+
 ---
 
 If you like what you see, please consider [sponsoring me] on GitHub!
 
 ## ♡ credits
 
-This is based on an outdated theme by fawn: [`fawni/dracula`]!\
+This theme is inspired by an outdated theme created by fawn: [`fawni/dracula`]!\
 Visual Refresh revert for guilds list from [`scattagain/VencordStuff`].\
 Other Visual Refresh reverts from [`MaiRiosIPla/unshittify-discord`].
 
