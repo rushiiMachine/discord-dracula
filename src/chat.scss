@@ -1,4 +1,36 @@
-/****** Overlay bars ******/
+/****** Chat Layout ******/
+
+main[class^="chatContent_"] > div[class^="messagesWrapper_"] {
+	// Fix chat padding because of new chat input padding
+	margin-bottom: 4px;
+
+	// Make chat scrollbar like the others
+	& > div[class^="scroller_"]::-webkit-scrollbar {
+		width: 12px;
+	}
+}
+
+// Rounding around chat area
+main[class^="chatContent_"] {
+	// Because chatContent provides the background to the chat area and text field,
+	// I had to improvise and use a pseudo-element to provide a small background overlay
+	// and then override the background again with the actual messagesWrapper that is rounded
+	&::before {
+		content: "";
+		position: fixed;
+		background-color: var(--dracula-secondary);
+		width: 100%;
+		height: 20px;
+	}
+
+	& > div[class^="messagesWrapper_"] {
+		border-top-left-radius: var(--radius-md);
+		border-top-right-radius: var(--radius-md);
+		background-color: var(--bg-overlay-chat, var(--background-base-lower));
+	}
+}
+
+/****** Top Unread Messages Bar ******/
 
 @keyframes unread-messages-bar-enter {
 	0% {
@@ -33,7 +65,52 @@ div[class^="jumpToPresentBar_"] {
 	box-shadow: 0 2px 12px var(--opacity-black-56) !important;
 }
 
-/****** Chat Layout & Chat Input ******/
+
+/****** Chat Input Typing Users ******/
+
+@keyframes typing-bar-enter {
+	0% {
+		top: 0;
+	}
+
+	100% {
+		top: -20px;
+	}
+}
+
+// Chat bar overlay the typing bar
+div[class^="channelTextArea_"] {
+	z-index: 1;
+	border: none;
+}
+
+// Align typing users bar above chat bar
+form[class*="formWithLoadedChatInput_"] div[class^="typing_"] {
+	top: -20px; // Move above chat bar
+	z-index: 0; // Under the chat bar
+	margin-left: 26px;
+	margin-right: 30px; // Because of text field rounding
+	height: min-content;
+	border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+	background-color: var(--chat-background-default);
+	padding: 3px 8px;
+	transition: none;
+	box-shadow: 0 -2px 6px var(--opacity-black-16);
+
+	.full-motion & {
+		animation-name: typing-bar-enter;
+		animation-duration: 150ms;
+		animation-fill-mode: backwards;
+	}
+}
+
+// Fix end of chat list padding to make room for typing users
+div[class^="scrollerSpacer_"] {
+	height: 30px !important;
+}
+
+
+/****** Chat Input ******/
 
 // Nicer chat bar
 div[class^="channelTextArea_"] {
@@ -98,80 +175,6 @@ div[class^="channelTextArea_"] {
 	div[class*="upsell_"] {
 		display: none;
 	}
-}
-
-main[class^="chatContent_"] > div[class^="messagesWrapper_"] {
-	// Fix chat padding because of new chat input padding
-	margin-bottom: 4px;
-
-	// Make chat scrollbar like the others
-	& > div[class^="scroller_"]::-webkit-scrollbar {
-		width: 12px;
-	}
-}
-
-// Rounding around chat area
-main[class^="chatContent_"] {
-	// Because chatContent provides the background to the chat area and text field,
-	// I had to improvise and use a pseudo-element to provide a small background overlay
-	// and then override the background again with the actual messagesWrapper that is rounded
-	&::before {
-		content: "";
-		position: fixed;
-		background-color: var(--dracula-secondary);
-		width: 100%;
-		height: 20px;
-	}
-
-	& > div[class^="messagesWrapper_"] {
-		border-top-left-radius: var(--radius-md);
-		border-top-right-radius: var(--radius-md);
-		background-color: var(--bg-overlay-chat, var(--background-base-lower));
-	}
-}
-
-
-/****** Chat Input Typing Users ******/
-
-@keyframes typing-bar-enter {
-	0% {
-		top: 0;
-	}
-
-	100% {
-		top: -20px;
-	}
-}
-
-// Chat bar overlay the typing bar
-div[class^="channelTextArea_"] {
-	z-index: 1;
-	border: none;
-}
-
-// Align typing users bar above chat bar
-form[class*="formWithLoadedChatInput_"] div[class^="typing_"] {
-	top: -20px; // Move above chat bar
-	z-index: 0; // Under the chat bar
-	margin-left: 26px;
-	margin-right: 30px; // Because of text field rounding
-	height: min-content;
-	border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-	background-color: var(--chat-background-default);
-	padding: 3px 8px;
-	transition: none;
-	box-shadow: 0 -2px 6px var(--opacity-black-16);
-
-	.full-motion & {
-		animation-name: typing-bar-enter;
-		animation-duration: 150ms;
-		animation-fill-mode: backwards;
-	}
-}
-
-// Fix end of chat list padding to make room for typing users
-div[class^="scrollerSpacer_"] {
-	height: 30px !important;
 }
 
 
