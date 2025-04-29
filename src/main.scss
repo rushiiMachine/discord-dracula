@@ -16,6 +16,7 @@
 //div[data-list-id^="private-channels"] div[class^="name_"], // DM names
 //span[class*="username_"], // Usernames
 //div[class^="nameTag_"] > div[class^="panelTitleContainer_"], // Current user username
+//div[class^="nowPlayingColumn_"] div[data-text-variant="text-md/semibold"],
 //{
-//	filter: blur(5px);
+//	filter: blur(10px);
 //}

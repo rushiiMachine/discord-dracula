@@ -109,6 +109,7 @@ div[class^="sidebar_"]::after {
 	div[data-list-item-id^="channels_"][class^="link_"] {
 		padding-top: 5.25px;
 		padding-bottom: 5.25px;
+		padding-left: 12px;
 	}
 
 	// Better margin for category items and thread items
