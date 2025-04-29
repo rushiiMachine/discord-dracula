@@ -37,7 +37,6 @@ div[class^="jumpToPresentBar_"] {
 
 // Nicer chat bar
 div[class^="channelTextArea_"] {
-	border-radius: 50px;
 	margin-left: var(--spacing-16);
 	margin-right: var(--spacing-16);
 	margin-bottom: var(--spacing-12);
@@ -55,10 +54,33 @@ div[class^="channelTextArea_"] {
 		}
 	}
 
-	// FIXME: scrollbar sized improperly and moves outside the textfield
-	div[class^="scrollableContainer_"] {
-		// Round the text field
-		border-radius: 50px;
+	// Round the text field
+	border-radius: 50px;
+	background-color: var(--dracula-primary) !important;
+	transition: border-radius 50ms linear !important;
+
+	// Un-round the text field when replying
+	&:has(> div[class^="stackedBars_"]) {
+		border-radius: 0 0 8px 8px;
+	}
+
+	// Un-round the text field when multi-line chat input
+	&:has(> div[class^="scrollableContainer_"] > div > div[class^="textArea_"]:not([style="height: 50px;"])) {
+		border-radius: 8px;
+	}
+
+	// Round the text field
+	& > div[class^="scrollableContainer_"] {
+		border-radius: inherit;
+
+		&::-webkit-scrollbar-thumb {
+			background-color: hsl(var(--primary-400-hsl) / 60%);
+		}
+	}
+
+	// Reply bar
+	& > div[class^="stackedBars_"] {
+		border: none !important;
 	}
 
 	// Move character count inwards to account for rounding
@@ -78,15 +100,18 @@ div[class^="channelTextArea_"] {
 	}
 }
 
-// Fix chat padding because of new chat input padding
-div[class^="messagesWrapper_"] {
+main[class^="chatContent_"] > div[class^="messagesWrapper_"] {
+	// Fix chat padding because of new chat input padding
 	margin-bottom: 4px;
+
+	// Make chat scrollbar like the others
+	& > div[class^="scroller_"]::-webkit-scrollbar {
+		width: 12px;
+	}
 }
 
 // Rounding around chat area
 main[class^="chatContent_"] {
-	// TODO: make scrollbar like dracula
-
 	// Because chatContent provides the background to the chat area and text field,
 	// I had to improvise and use a pseudo-element to provide a small background overlay
 	// and then override the background again with the actual messagesWrapper that is rounded
