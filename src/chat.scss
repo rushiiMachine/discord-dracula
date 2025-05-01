@@ -113,28 +113,14 @@ div[class^="scrollerSpacer_"] {
 /****** Chat Input ******/
 
 // Nicer chat bar
-div[class^="channelTextArea_"] {
+div[class^="channelBottomBarArea_"] > div[class^="channelTextArea_"] {
 	margin-left: var(--spacing-16);
 	margin-right: var(--spacing-16);
 	margin-bottom: var(--spacing-12);
 
-	div[class^="buttons_"] {
-		gap: 0 !important;
-	}
-
-	div[class*="buttonContainer_"] {
-		padding: 0 2px;
-		opacity: 0.7;
-
-		&:hover {
-			opacity: 1;
-		}
-	}
-
 	// Round the text field
 	border-radius: 50px;
 	background-color: var(--dracula-primary) !important;
-	transition: border-radius 50ms linear !important;
 
 	// Un-round the text field when replying
 	&:has(> div[class^="stackedBars_"]) {
@@ -149,9 +135,18 @@ div[class^="channelTextArea_"] {
 	// Round the text field
 	& > div[class^="scrollableContainer_"] {
 		border-radius: inherit;
+	}
 
-		&::-webkit-scrollbar-thumb {
-			background-color: hsl(var(--primary-400-hsl) / 60%);
+	// Smaller buttons padding
+	div[class^="buttons_"] {
+		gap: 2px !important;
+	}
+
+	div[class*="buttonContainer_"] {
+		opacity: 0.7;
+
+		&:hover {
+			opacity: 1;
 		}
 	}
 
@@ -175,6 +170,16 @@ div[class^="channelTextArea_"] {
 	div[class*="upsell_"] {
 		display: none;
 	}
+}
+
+// Fix scroll color of chat input
+div[class^="channelTextArea_"] > div[class^="scrollableContainer_"]::-webkit-scrollbar-thumb {
+	background-color: hsl(var(--primary-400-hsl) / 60%);
+}
+
+// Fix padding between buttons and edit text on existing messages
+div:not([class]) > div[class^="channelTextArea_"] > div[class^="scrollableContainer_"] > div[class^="inner_"] {
+	gap: 10px;
 }
 
 
