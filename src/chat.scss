@@ -198,6 +198,9 @@ div[class^="divider_"] {
 article[class^="embedWrapper_"] {
 	padding-left: var(--spacing-8);
 	padding-top: var(--spacing-4);
+	border-top: none !important;
+	border-bottom: none !important;
+	border-right: none !important;
 }
 
 // Slightly better padding between message header and content

@@ -13,8 +13,10 @@
 	"Liberation Mono", "Nimbus Mono L", monaco, "Courier New", courier, monospace;
 }
 
-[class*="text-sm/medium"] {
-	font-weight: 600;
+h3[class*="text-sm/medium"],
+div[class*="text-sm/medium"],
+{
+	font-weight: 600 !important;
 }
 
 /****** Sizing ******/
@@ -111,9 +113,14 @@ body,
 	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
 
 	// Borders
-	--border-normal: none;
+	--border-normal: transparent;
 	--input-border: none;
 	--app-border-frame: none;
+
+	// Text
+	--text-brand: var(--dracula-accent-alpha-85);
+	--text-normal: var(--white-560); // Normal is --white-530, makes all text a bit more dim
+	--header-primary: var(--white-530);
 
 	// Discord Brand variables
 	--bg-brand: var(--dracula-accent);
@@ -121,4 +128,9 @@ body,
 	--brand-500: var(--dracula-accent);
 	--brand-560: var(--dracula-accent-alpha-90);
 	--blurple-50: var(--dracula-accent-alpha-90);
+}
+
+// Text selection
+*::selection {
+	background-color: var(--dracula-accent-alpha-20);
 }

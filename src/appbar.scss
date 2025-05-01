@@ -46,8 +46,8 @@ div[data-windows="true"][class^="bar_"] {
 	position: absolute;
 	background-color: var(--background-tertiary);
 	border-radius: var(--radius-xs);
-	top: 10px;
-	right: var(--space-xs);
+	top: 6px;
+	right: 6px;
 	left: unset;
 	padding: 0;
 	overflow: hidden;
@@ -88,8 +88,6 @@ section[class^="title_"] div[class^="children_"] {
 		display: none;
 	}
 }
-
-// TODO: make title have ellipsis
 
 // Fix searchbar
 div[class^="searchBar_"] {
