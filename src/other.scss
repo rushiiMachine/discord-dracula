@@ -1,10 +1,13 @@
 /****** Inbox popout ******/
 
 // Remove border from messages
-div[class^="layerContainer_"] div[class^="messages_"],
-div[class^="layerContainer_"] div[class^="messageContainer_"] {
-	border: none;
-	border-radius: 8px !important;
+div[class^="layerContainer_"] {
+	div[class^="messages_"],
+	div[class^="messageContainer_"],
+	{
+		border: none;
+		border-radius: 8px !important;
+	}
 }
 
 // Better padding for Friend Requests tab
@@ -18,9 +21,6 @@ div[class*="recentMentionsPopout_"] {
 	min-height: 90vh;
 	max-height: 100vh !important;
 	min-width: 600px;
-
-	// Background color for messages
-	--background-surface-higher: var(--dracula-primary);
 
 	// Fix avatars/guild icons rounding
 	div[class*="guildIcon_"],
@@ -50,6 +50,23 @@ div[class*="recentMentionsPopout_"] {
 	// Friend requests button badge
 	div[class^="numberBadge_"] {
 		background-color: var(--status-danger) !important;
+	}
+}
+
+/****** Pinned popout ******/
+
+.visual-refresh div[class^="messagesPopoutWrap_"] {
+	max-height: 90vh !important;
+	width: 600px;
+
+	div[class^="messagesPopout_"] {
+		padding: 12px 8px 8px 16px !important;
+	}
+
+	div[class^="messageGroupWrapper_"] {
+		border: none;
+		border-radius: 8px;
+		padding-left: 4px;
 	}
 }
 

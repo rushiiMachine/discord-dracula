@@ -32,11 +32,6 @@ div[class^="sidebarList_"] {
 	&::after {
 		display: none;
 	}
-
-	// Fix banner padding
-	div[class^="scroller_"] div[style="height: 12px;"] {
-		display: none;
-	}
 }
 
 // Remove random excess padding

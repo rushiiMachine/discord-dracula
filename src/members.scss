@@ -11,3 +11,8 @@ div[class^="chat_"] > div[class^="content_"] > div[class^="container_"] {
 h3[class*="membersGroup_"] {
 	margin-bottom: var(--spacing-4);
 }
+
+// Better padding for member items
+aside[class^="membersWrap_"] div[class^="childContainer_"] {
+	padding: 0 4px;
+}
