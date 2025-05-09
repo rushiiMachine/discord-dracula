@@ -31,11 +31,6 @@ div[data-list-item-id="guildsnav___home"] {
 	}
 }
 
-// Color the folder icon
-div[data-list-item-id^="guildsnav__"] > div[class^="folderIconWrapper_"] svg {
-	color: var(--dracula-accent) !important;
-}
-
 // Pending guild applications folder (clans)
 ul[data-list-id="guildsnav"] > div > div[class^="stack_"] > div[class^="container_"] {
 	margin-top: 8px;

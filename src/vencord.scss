@@ -156,4 +156,5 @@ a[data-list-item-id^="channels__"] > div > div[class^="children_"] {
 // Online friend count in guilds list
 #vc-friendcount {
 	color: var(--text-secondary) !important;
+	margin-bottom: 4px;
 }
