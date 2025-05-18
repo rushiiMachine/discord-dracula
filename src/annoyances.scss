@@ -8,12 +8,12 @@ nav[class^="privateChannels_"] div[class^="searchBar_"] {
 	display: none;
 }
 
-div[data-list-id^="private-channels"] {
+div[data-list-id^="private-channels"] > ul {
 	margin-top: var(--spacing-12);
 
 	// Nitro/Shop buttons towards the top
-	li:has(a[data-list-item-id$="nitro"]),
-	li:has(a[data-list-item-id$="shop"]),
+	& > li:has(> div > a[data-list-item-id$="nitro"]),
+	& > li:has(> div > a[data-list-item-id$="shop"]),
 	{
 		display: none;
 	}

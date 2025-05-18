@@ -173,6 +173,7 @@ div[class^="channelBottomBarArea_"] > div[class^="channelTextArea_"] {
 
 	div[class^="replyBar_"] {
 		background-color: var(--dracula-tertiary);
+		padding-right: 3px; // Align cancel button with chat action buttons
 	}
 }
 

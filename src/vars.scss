@@ -35,6 +35,7 @@ div[class*="text-sm/medium"],
 /****** Colors ******/
 
 body,
+.visual-refresh .theme-dark,
 .visual-refresh.theme-dark,
 .visual-refresh.theme-darker,
 .visual-refresh.theme-midnight,
@@ -101,21 +102,23 @@ body,
 	--modal-footer-background: var(--dracula-tertiary);
 	--button-filled-brand-background: var(--dracula-accent-alpha-85);
 	--button-filled-brand-background-hover: var(--dracula-accent);
+	--checkbox-background-default: var(--dracula-secondary);
 
 	// Messages
 	--background-modifier-selected: var(--dracula-accent-alpha-20);
 	--info-warning-foreground: var(--dracula-accent); // mentioned message left border
 	--text-link: var(--dracula-accent);
-	--mention-foreground: var(--dracula-accent);
 	--interactive-active: hsl(from var(--interactive-normal) h s calc(l + 10));
 	--interactive-hover: hsl(from var(--interactive-normal) h s calc(l + 20));
+	--mention-foreground: var(--dracula-accent);
 
-	//--mention-background: var(--dracula-accent-alpha-90); // The default looks well
+	//--mention-background: var(--dracula-accent-alpha-90); // The default looks good
 
 	// Borders
 	--border-normal: transparent;
 	--input-border: none;
 	--app-border-frame: none;
+	--checkbox-border-default: var(--white-830);
 
 	// Text
 	--text-brand: var(--dracula-accent-alpha-85);
