@@ -39,6 +39,57 @@ div[class^="sidebar_"]::after {
 	display: none;
 }
 
+/****** DM Items ******/
+
+%custom-unread-dm-indicator {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: 2px;
+	z-index: 999;
+}
+
+div[data-list-id^="private-channels-"] > ul {
+	padding-right: var(--spacing-4);
+
+	& > li {
+		border-radius: var(--radius-sm);
+	}
+
+	& > li > div > a {
+		padding-left: 12px;
+	}
+
+	// Original channel unread indicator
+	div[class^="unreadPill_"] {
+		display: none;
+	}
+
+	// Unread DM items
+	// Custom unread indicator
+	& > li:has(> div[class^="unreadPill_"]) > div[class^="interactive_"]::before {
+		background-color: var(--white-600);
+		@extend %custom-unread-dm-indicator;
+	}
+
+	// Selected DM items
+	& > li:has(> div[class*="selected_"]) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		& > div {
+			background: var(--bg-overlay-selected, var(--background-modifier-selected));
+		}
+
+		// Add our own channel indicator
+		& > div::before {
+			background-color: var(--dracula-accent) !important;
+			@extend %custom-unread-dm-indicator;
+		}
+	}
+}
+
 /****** Channel Items ******/
 
 %custom-unread-channel-indicator {
@@ -110,56 +161,5 @@ div[class^="sidebar_"]::after {
 	// Better margin for category items and thread items
 	div[data-list-item-id^="channels_"][class^="mainContent_"] {
 		padding-bottom: 0.7rem;
-	}
-}
-
-/****** DM Items ******/
-
-%custom-unread-dm-indicator {
-	content: "";
-	display: block;
-	position: absolute;
-	height: 100%;
-	width: 2px;
-	z-index: 999;
-}
-
-div[data-list-id^="private-channels-"] > ul {
-	padding-right: var(--spacing-4);
-
-	& > li {
-		border-radius: var(--radius-sm);
-	}
-
-	& > li > div > a {
-		padding-left: 12px;
-	}
-
-	// Original channel unread indicator
-	div[class^="unreadPill_"] {
-		display: none;
-	}
-
-	// Unread DM items
-	// Custom unread indicator
-	& > li:has(> div[class^="unreadPill_"]) > div[class^="interactive_"]::before {
-		background-color: var(--white-600);
-		@extend %custom-unread-dm-indicator;
-	}
-
-	// Selected DM items
-	& > li:has(> div[class*="selected_"]) {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-
-		& > div {
-			background: var(--bg-overlay-selected, var(--background-modifier-selected));
-		}
-
-		// Add our own channel indicator
-		& > div::before {
-			background-color: var(--dracula-accent) !important;
-			@extend %custom-unread-dm-indicator;
-		}
 	}
 }
