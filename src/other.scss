@@ -165,3 +165,7 @@ section,
 {
 	border: none !important;
 }
+
+div[class^="wrapper_"] {
+	box-shadow: none !important;
+}
