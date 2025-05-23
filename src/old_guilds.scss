@@ -18,8 +18,8 @@ nav[class*="guilds_"] {
 
 	defs,
 	div[class^="blobContainer_"],
-	div[class*="wrapper_"],
 	div[class^="listItemWrapper__"],
+	div[class*="wrapper_"]:not([class*="listItem__"] > [class*="wrapper_"]),
 	div[class^="dragInner__"], // Placeholder background while dragging guild items
 	svg[class*="placeholderMask__"],
 	svg:not([class*="placeholderMask__"]) > foreignObject,
@@ -110,6 +110,10 @@ nav[class*="guilds_"] {
 				& > :last-child {
 					margin-bottom: 0;
 				}
+			}
+
+			& > [class*="listItem__"] {
+				margin-bottom: 0;
 			}
 		}
 	}
