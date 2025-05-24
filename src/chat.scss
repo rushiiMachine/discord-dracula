@@ -90,14 +90,14 @@ div[class^="channelTextArea_"] {
 }
 
 // Align typing users bar above chat bar
-form[class*="formWithLoadedChatInput_"] div[class^="typing_"] {
-	top: -20px; // Move above chat bar
+form[class*="formWithLoadedChatInput_"] > div[class^="typing_"] {
+	top: -22px; // Move above chat bar
 	z-index: 0; // Under the chat bar
-	margin-left: var(--spacing-8);
-	margin-right: var(--spacing-8);
+	margin-left: 26px;
+	margin-right: 30px; // Because of text field rounding
 	height: min-content;
 	border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-	background-color: var(--chat-background-default);
+	background-color: var(--dracula-secondary);
 	padding: 4px 8px;
 	transition: none;
 	box-shadow: 0 -2px 6px var(--opacity-black-16);
@@ -107,11 +107,6 @@ form[class*="formWithLoadedChatInput_"] div[class^="typing_"] {
 		animation-duration: 150ms;
 		animation-fill-mode: backwards;
 	}
-}
-
-// Un-round chat input when users typing
-form[class*="formWithLoadedChatInput_"]:has(> div[class^="typing_"]) > div > div[class^="channelBottomBarArea_"] > div[class^="channelTextArea_"] {
-	border-radius: 0 0 8px 8px;
 }
 
 // Fix end of chat list padding to make room for typing users
@@ -168,6 +163,11 @@ div[class^="channelBottomBarArea_"] > div[class^="channelTextArea_"] {
 	// Reply bar
 	& > div[class^="stackedBars_"] {
 		border: none !important;
+
+		// Remove extra padding when replying + typing users
+		& div[class^="clipContainer_"] {
+			padding-top: 0;
+		}
 	}
 
 	// Move character count inwards to account for rounding
