@@ -41,13 +41,6 @@ a[data-list-item-id^="channels__"] div[class^="children_"] > div:has(> svg > pat
 }
 
 
-/****** Guilds List ******/
-
-// Remove discover servers item from guilds list
-ul[data-list-id="guildsnav"] div[class^="listItem_"]:has(foreignObject > div[data-list-item-id="guildsnav___guild-discover-button"]) {
-	display: none;
-}
-
 /****** User Context Menus ******/
 
 // Remove "Invite to server"
