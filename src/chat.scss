@@ -28,9 +28,13 @@ main[class^="chatContent_"] {
 		border-top-right-radius: var(--radius-md);
 		background-color: var(--bg-overlay-chat, var(--background-base-lower));
 
-		// Extra padding to account for custom typing users bar
 		& > div[class^="jumpToPresentBar_"] {
+			// Extra padding to account for custom typing users bar
 			bottom: 20px;
+
+			// Nicer "You are viewing older messages" bar
+			background-color: var(--dracula-tertiary) !important;
+			box-shadow: 0 2px 12px var(--opacity-black-56) !important;
 		}
 	}
 }
@@ -62,12 +66,6 @@ div[class^="newMessagesBar"] {
 		animation-duration: 150ms;
 		animation-fill-mode: backwards;
 	}
-}
-
-// Nicer "You are viewing older messages" bar
-div[class^="jumpToPresentBar_"] {
-	background-color: var(--dracula-tertiary) !important;
-	box-shadow: 0 2px 12px var(--opacity-black-56) !important;
 }
 
 
