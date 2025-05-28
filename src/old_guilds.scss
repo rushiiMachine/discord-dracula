@@ -91,7 +91,7 @@ nav[class*="guilds_"] {
 		gap: 0 !important;
 
 		// Expanded folder items container
-		& > div[data-drop-hovering][class*="isExpanded__"] {
+		div[data-drop-hovering][class*="isExpanded__"] {
 			margin-bottom: 8px;
 
 			// Folder items background track
@@ -118,12 +118,22 @@ nav[class*="guilds_"] {
 		}
 	}
 
+	// Pending clan applications folder icon
+	div[class^="pendingFolderButtonIcon_"] {
+		color: var(--dracula-accent);
+
+		& > svg { // stylelint-disable-line no-descending-specificity
+			width: 24px !important;
+			height: 24px !important;
+		}
+	}
+
 	// Folder icons
 	div[class^="folderButtonContent_"] {
 		& > div > div[class^="folderIcon__"] {
 			background-color: var(--dracula-tertiary);
 
-			svg {
+			& > svg {
 				width: 24px !important;
 				height: 24px !important;
 			}
