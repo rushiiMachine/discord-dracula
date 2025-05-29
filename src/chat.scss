@@ -1,15 +1,5 @@
 /****** Chat Layout ******/
 
-main[class^="chatContent_"] > div[class^="messagesWrapper_"] {
-	// Fix chat padding because of new chat input padding
-	margin-bottom: 4px;
-
-	// Make chat scrollbar like the others
-	& > div[class^="scroller_"]::-webkit-scrollbar {
-		width: 12px;
-	}
-}
-
 // Rounding around chat area
 main[class^="chatContent_"] {
 	// Because chatContent provides the background to the chat area and text field,
@@ -23,10 +13,32 @@ main[class^="chatContent_"] {
 		height: 20px;
 	}
 
+	// Inner shadow for chat window
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 110%;
+		pointer-events: none;
+		box-shadow: 0 0 6px 3px rgb(0 0 0 / 15%) inset;
+		border-top-left-radius: var(--radius-md);
+		border-top-right-radius: var(--radius-md);
+	}
+
 	& > div[class^="messagesWrapper_"] {
 		border-top-left-radius: var(--radius-md);
 		border-top-right-radius: var(--radius-md);
 		background-color: var(--bg-overlay-chat, var(--background-base-lower));
+
+		// Fix chat padding because of new chat input padding
+		margin-bottom: 4px;
+
+		// Make chat scrollbar like the others
+		& > div[class^="scroller_"]::-webkit-scrollbar {
+			width: 12px;
+		}
 
 		& > div[class^="jumpToPresentBar_"] {
 			// Extra padding to account for custom typing users bar
