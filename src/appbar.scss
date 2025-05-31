@@ -46,8 +46,8 @@ div[data-windows="true"][class^="bar_"] {
 	position: absolute;
 	background-color: var(--background-tertiary);
 	border-radius: var(--radius-xs);
-	top: 10px;
-	right: 6px;
+	top: 12px;
+	right: 12px;
 	left: unset;
 	padding: 0;
 	overflow: hidden;
@@ -92,6 +92,7 @@ section[class^="title_"] div[class^="children_"] {
 // Fix searchbar
 div[class^="searchBar_"] {
 	border: none !important;
+	border-radius: var(--radius-xs);
 	height: 36px !important;
 	align-items: center;
 	padding: 2px 4px !important;

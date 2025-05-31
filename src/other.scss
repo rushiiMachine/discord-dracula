@@ -162,11 +162,28 @@ div[class^="container_"],
 div[class^="tooltip_"],
 div[class^="scroller_"],
 div[class^="confirmation_"],
+div[class^="formNotice_"],
+div[class^="preview_"],
 section,
 {
 	border: none !important;
 }
 
+div[class^="buttonContainer_"] {
+	--border-subtle: none;
+}
+
 div[class^="wrapper_"] {
 	box-shadow: none !important;
+}
+
+div[class^="popout_"] {
+	border: none !important;
+	border-radius: var(--radius-sm);
+	background-color: var(--dracula-tertiary);
+}
+
+div[class^="popoutContainer_"] {
+	box-shadow: var(--shadow-medium) !important;
+	background-color: var(--dracula-tertiary) !important;
 }

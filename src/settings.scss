@@ -18,13 +18,26 @@ button[class*="lookOutlined_"][class*="colorRed_"] {
 	}
 }
 
-// Properly colored switches {
-div[class*="checked_"] {
-	background-color: var(--dracula-accent) !important;
-	border: none !important;
+// Switches
+div[class^="control_"] {
+	// Is checked
+	& > div[class*="checked_"] {
+		background-color: var(--dracula-accent) !important;
+		border: none !important;
+
+		& > svg > svg > path {
+			fill: var(--dracula-accent);
+		}
+	}
 }
 
 // Larger bottom padding for settings page
 div[class^="contentColumn_"] {
 	padding-bottom: 110px;
+}
+
+// Radio button setting
+div[role="radio"] {
+	color: var(--text-primary) !important;
+	background-color: var(--dracula-secondary);
 }
