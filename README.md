@@ -32,7 +32,18 @@ to always display the folder icons shown in the screenshots!
 
 ---
 
-If you like what you see, please consider [sponsoring me] on GitHub!
+If you like what you see, please consider [sponsoring me ♡] on GitHub, or leaving a star!
+
+### Experiments plugin
+
+If you are using the Experiments plugin on Vencord with the "Toolbar Dev Menu" option
+enabled, you need to add this CSS snippet to your Custom CSS:
+
+```css
+section[class^="title_"] > div > div[class^="toolbar_"]::after {
+	width: 190px;
+}
+```
 
 ## ♡ credits
 
@@ -63,7 +74,7 @@ theme to be recompiled and reapplied.
 [//]: # (@formatter:off)
 
 [`dracula.theme.css`]: https://github.com/rushiiMachine/discord-dracula/blob/master/dracula.theme.css
-[sponsoring me]: https://github.com/sponsors/rushiiMachine
+[sponsoring me ♡]: https://github.com/sponsors/rushiiMachine
 [`fawni/dracula`]: https://github.com/fawni/dracula
 [`scattagain/VencordStuff`]: https://github.com/scattagain/VencordStuff
 [`MaiRiosIPla/unshittify-discord`]: https://github.com/MaiRiosIPla/unshittify-discord
