@@ -43,7 +43,6 @@
 	div[class^="note_"] > textarea {
 		margin-top: 6px;
 		padding: 10px;
-		background-color: var(--dracula-tertiary);
 		border: 1px solid transparent;
 
 		&:focus {
@@ -52,12 +51,20 @@
 	}
 }
 
+// User notes
+.user-profile-modal:not(.custom-user-profile-theme) div[class^="note_"] > textarea {
+	background-color: var(--dracula-tertiary);
+}
+
 // Roles
 div[class^="role_"] {
 	border: none;
-	background-color: var(--dracula-tertiary);
 	padding: 8px 6px;
 	gap: 2px;
+
+	.user-profile-modal:not(.custom-user-profile-theme) & {
+		background-color: var(--dracula-tertiary);
+	}
 }
 
 // Add role button
@@ -68,7 +75,10 @@ div[data-list-id^="roles-"] > div > button {
 // User account connection card
 div[class^="connectedAccountContainer_"] {
 	border: none;
-	background-color: var(--dracula-tertiary);
+
+	.user-profile-modal:not(.custom-user-profile-theme) & {
+		background-color: var(--dracula-tertiary);
+	}
 
 	img {
 		filter: brightness(80%);
