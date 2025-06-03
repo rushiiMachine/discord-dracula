@@ -15,8 +15,7 @@ div[class^="sidebarList_"] {
 	}
 
 	// Floating mentions channels list indicator
-	div[class*="mentionsBar_"] {
-		background-color: var(--dracula-accent);
+	div[role="button"][class*="mentionsBar_"] {
 		box-shadow: 0 4px 20px var(--opacity-black-56);
 	}
 

@@ -4,6 +4,11 @@
 
 /****** User Profile Popout ******/
 
+// User notes
+.user-profile-modal:not(.custom-user-profile-theme) div[class^="note_"] > textarea {
+	background-color: var(--dracula-tertiary);
+}
+
 // Better inner padding
 .user-profile-modal div[class^="container_"] {
 	& > div[class^="tabBar_"] {
@@ -49,11 +54,6 @@
 			border: 1px solid var(--dracula-accent);
 		}
 	}
-}
-
-// User notes
-.user-profile-modal:not(.custom-user-profile-theme) div[class^="note_"] > textarea {
-	background-color: var(--dracula-tertiary);
 }
 
 // Roles

@@ -21,7 +21,7 @@ div[class^="container_"] > div[class^="base_"] {
 section[class^="title_"] {
 	border: none;
 	overflow: hidden !important;
-	background-color: var(--dracula-secondary);
+	background-color: var(--dracula-secondary) !important;
 
 	& > div > div[class^="toolbar_"] {
 		// Spacing for the buttons that moved down as an overlay

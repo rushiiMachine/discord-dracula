@@ -22,6 +22,12 @@ div[class*="recentMentionsPopout_"] {
 	max-height: 100vh !important;
 	min-width: 600px;
 
+	// Better colors
+	--background-surface-high: var(--dracula-tertiary);
+	--background-surface-higher: var(--dracula-secondary);
+
+	box-shadow: var(--shadow-high);
+
 	// Fix avatars/guild icons rounding
 	div[class*="guildIcon_"],
 	img[class^="dmIcon_"] {
@@ -169,21 +175,24 @@ section,
 	border: none !important;
 }
 
-div[class^="buttonContainer_"] {
-	--border-subtle: none;
-}
-
 div[class^="wrapper_"] {
 	box-shadow: none !important;
 }
 
 div[class^="popout_"] {
-	border: none !important;
 	border-radius: var(--radius-sm);
 	background-color: var(--dracula-tertiary);
 }
 
+// Reaction info popout
 div[class^="popoutContainer_"] {
 	box-shadow: var(--shadow-medium) !important;
 	background-color: var(--dracula-tertiary) !important;
+}
+
+// Threads list hover pop out's "See All" text button
+div[class^="more_"] {
+	border-top: none;
+	padding-top: 0;
+	padding-bottom: 16px;
 }
