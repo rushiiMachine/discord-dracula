@@ -73,7 +73,7 @@ div[data-list-id^="roles-"] > div > button {
 }
 
 // User account connection card
-div[class^="connectedAccountContainer_"] {
+li[class^="connectedAccountContainer_"] {
 	border: none;
 
 	.user-profile-modal:not(.custom-user-profile-theme) & {
