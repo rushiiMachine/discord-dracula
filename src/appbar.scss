@@ -13,8 +13,17 @@ ul[data-list-id="guildsnav"] div[class*="scroller_"] div[class^="tutorialContain
 }
 
 // Remove spacing from old title bar
-div[class^="container_"] > div[class^="base_"] {
+div[data-fullscreen][class^="base_"] {
 	grid-template-rows: [top] 0 [titlebarend] min-content [noticeend] 1fr [end];
+	grid-template-areas:
+		"titleBar titleBar titleBar"
+		"notice notice notice" // This is changed from default
+		"guildsList channelsList page";
+
+	// Un-round notices on top of title bar
+	& > div[class^="notice_"] {
+		border-radius: 0;
+	}
 }
 
 // Move search bar/buttons left to make space for window buttons moved down
@@ -62,6 +71,11 @@ div[data-windows="true"][class^="bar_"] {
 	// Hide old title bar
 	& > div[class^="title_"] {
 		display: none;
+	}
+
+	// Move it down when notice exists
+	div[data-fullscreen][class^="base_"]:has(> div[class^="notice_"]) > & {
+		top: 50px;
 	}
 }
 
