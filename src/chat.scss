@@ -234,6 +234,9 @@ h3[aria-labelledby^="message-username-"] {
 }
 
 div[id^="message-accessories-"] {
+	// Border fix for text file previews
+	--border-subtle: transparent;
+
 	// Less rounding on message media
 	div[class^="visualMediaItemContainer_"],
 	div[class^="visualMediaItemContainer_"] > div,

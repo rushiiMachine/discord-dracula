@@ -5,12 +5,10 @@
 // Better "scroll" unread guilds list indicator
 div[class^="unreadMentionsIndicatorTop_"] > div {
 	box-shadow: 0 2px 12px var(--opacity-black-76) !important;
-	background-color: var(--dracula-accent);
 }
 
 div[class^="unreadMentionsIndicatorBottom_"] > div {
 	box-shadow: 0 -2px 12px var(--opacity-black-76) !important;
-	background-color: var(--dracula-accent);
 }
 
 // Accent color on guild unread indicators
