@@ -50,7 +50,7 @@ section[class^="title_"] {
 }
 
 // Move down window buttons & inbox
-div[data-windows="true"][class^="bar_"] {
+div[data-fullscreen="false"] > div[class^="bar_"] {
 	gap: 2px;
 	width: max-content;
 	z-index: 1000 !important;
