@@ -24,8 +24,7 @@ jobs:
           node-version: 24
 
       - name: Setup PNPM
-        run: |
-          npm install -g pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Build Theme
         run: |
