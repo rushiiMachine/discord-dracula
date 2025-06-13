@@ -26,7 +26,7 @@ jobs:
       - name: Setup PNPM and dependencies
         uses: pnpm/action-setup@v4
         with:
-          run-install: |
+          run_install: |
             args: [--frozen-lockfile]
 
       - name: Build Theme
