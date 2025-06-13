@@ -18,15 +18,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 22
+      - name: Setup Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: "22.x"
+          node-version: 24
 
       - name: Setup PNPM
         run: |
-          npm install --global corepack
-          corepack install
+          npm install -g pnpm
 
       - name: Build Theme
         run: |
