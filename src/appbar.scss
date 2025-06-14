@@ -12,12 +12,12 @@ ul[data-list-id="guildsnav"] div[class*="scroller_"] div[class^="tutorialContain
 	margin-top: 1rem;
 }
 
-// Remove spacing from old title bar
+// Hide old title bar and & move notices to the very top
 div[data-fullscreen][class^="base_"] {
-	grid-template-rows: [top] 0 [titlebarend] min-content [noticeend] 1fr [end];
+	grid-template-rows: [top] min-content [titleBarEnd] 0 [noticeEnd] 1fr [end];
 	grid-template-areas:
+		"notice notice notice"
 		"titleBar titleBar titleBar"
-		"notice notice notice" // This is changed from default
 		"guildsList channelsList page";
 
 	// Un-round notices on top of title bar
@@ -50,7 +50,7 @@ section[class^="title_"] {
 }
 
 // Move down window buttons & inbox
-div[data-fullscreen="false"] > div[class^="bar_"] {
+div[data-fullscreen][class^="base_"] > div[class^="bar_"] {
 	gap: 2px;
 	width: max-content;
 	z-index: 1000 !important;
@@ -71,11 +71,6 @@ div[data-fullscreen="false"] > div[class^="bar_"] {
 	// Hide old title bar
 	& > div[class^="title_"] {
 		display: none;
-	}
-
-	// Move it down when notice exists
-	div[data-fullscreen][class^="base_"]:has(> div[class^="notice_"]) > & {
-		top: 50px;
 	}
 }
 
