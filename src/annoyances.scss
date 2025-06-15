@@ -11,12 +11,12 @@ nav[class^="privateChannels_"] div[class^="searchBar_"] {
 div[data-list-id^="private-channels"] > ul {
 	margin-top: var(--spacing-12);
 
-	// Nitro/Shop buttons towards the top
-	& > li:has(> div > a[data-list-item-id$="nitro"]),
-	& > li:has(> div > a[data-list-item-id$="shop"]),
-	{
-		display: none;
-	}
+	//// Nitro/Shop buttons towards the top
+	//& > li:has(> div > a[data-list-item-id$="nitro"]),
+	//& > li:has(> div > a[data-list-item-id$="shop"]),
+	//{
+	//	display: none;
+	//}
 }
 
 
@@ -35,7 +35,7 @@ div[class^="sidebarList_"] div[class^="scroller_"] > ul > li {
 	}
 }
 
-// Remove "Create Invite" button from channel item
+// Remove "Create Invite" button from channel items in channels list
 a[data-list-item-id^="channels__"] div[class^="children_"] > div:has(> svg > path[d="M19 14a1 1 0 0 1 1 1v3h3a1 1 0 0 1 0 2h-3v3a1 1 0 0 1-2 0v-3h-3a1 1 0 1 1 0-2h3v-3a1 1 0 0 1 1-1Z"]) {
 	display: none;
 }
@@ -74,11 +74,6 @@ div[class^="toolbar_"] {
 	{
 		display: none;
 	}
-}
-
-// Remove "Follow" button from announcement channel titles
-section[class^="title_"] button[class^="followButton_"] {
-	display: none;
 }
 
 

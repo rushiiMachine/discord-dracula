@@ -79,7 +79,10 @@ div[data-fullscreen][class^="base_"] > div[class^="bar_"] {
 section[class^="title_"] {
 	-webkit-app-region: drag;
 
-	div[class^="topic_"] {
+	// Undo drag for interactable items
+	div[class^="topic_"],
+	button[class^="followButton_"],
+	{
 		-webkit-app-region: no-drag !important;
 	}
 }
