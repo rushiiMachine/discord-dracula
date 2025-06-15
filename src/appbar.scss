@@ -14,6 +14,7 @@ ul[data-list-id="guildsnav"] div[class*="scroller_"] div[class^="tutorialContain
 
 // Hide old title bar and & move notices to the very top
 div[data-fullscreen][class^="base_"] {
+	// stylelint-disable-next-line value-keyword-case
 	grid-template-rows: [top] min-content [titleBarEnd] 0 [noticeEnd] 1fr [end];
 	grid-template-areas:
 		"notice notice notice"
