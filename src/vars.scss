@@ -30,6 +30,10 @@ div[class*="text-sm/medium"],
 	--radius-lg: 16px;
 	--radius-xl: 24px;
 	--radius-xxl: 32;
+	--spacing-4: 4px;
+	--spacing-8: 8px;
+	--spacing-12: 12px;
+	--spacing-16: 16px;
 }
 
 /****** Colors ******/
@@ -41,7 +45,7 @@ body,
 .visual-refresh.theme-midnight,
 .theme-dark.theme-darker,
 {
-	/* Theme color palette */
+	// Theme color palette
 	--dracula-primary: #282a36;
 	--dracula-secondary: #242631;
 	--dracula-secondary-alpha: rgb(36 38 49 / 90%);
@@ -60,7 +64,7 @@ body,
 	--dracula-accent-dark: #7b49c0;
 	--dracula-accent-light: #d4b5ff;
 
-	/* BetterDiscord */
+	// BetterDiscord
 	--bd-blue: var(--dracula-accent);
 	--bd-blue-hover: var(--dracula-accent-light);
 	--bd-blue-active: var(--dracula-accent-light);
