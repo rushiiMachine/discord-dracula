@@ -65,16 +65,13 @@ body,
 	--bd-blue-hover: var(--dracula-accent-light);
 	--bd-blue-active: var(--dracula-accent-light);
 	--blurple: var(--dracula-accent);
-
-	// Old Discord variables (pre Visual Refresh)
 	--background-primary: var(--dracula-primary);
 	--background-secondary: var(--dracula-secondary);
 	--background-secondary-alt: var(--dracula-secondary);
 	--background-tertiary: var(--dracula-tertiary);
 	--background-floating: var(--dracula-secondary);
+	--background-nested-floating: var(--dracula-tertiary);
 	--background-accent: var(--dracula-accent);
-
-	// New Discord variables (Visual Refresh)
 	--bg-base-primary: var(--dracula-primary);
 	--bg-base-secondary: var(--dracula-secondary);
 	--bg-base-tertiary: var(--dracula-secondary);

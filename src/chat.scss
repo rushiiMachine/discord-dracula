@@ -214,6 +214,8 @@ div[class*="reactionMe_"] {
 div[class^="divider_"] {
 	--divider-color: var(--dracula-accent);
 
+	border-top: thin solid var(--divider-color);
+
 	& > span {
 		color: var(--white-530);
 	}
@@ -260,6 +262,12 @@ span[class*="botTagRegular_"] {
 // File upload message item
 div[class^="file_"] {
 	border: none;
+}
+
+// Audio message items
+div[class^="wrapperAudio_"] {
+	border: none;
+	background-color: var(--dracula-secondary);
 }
 
 
